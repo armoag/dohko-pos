@@ -1,0 +1,138 @@
+﻿<Page x:Class="Dohko.VendorDetailPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Dohko"
+      xmlns:Zeus="clr-namespace:Zeus;assembly=Zeus"
+      mc:Ignorable="d" 
+      d:DesignHeight="950" d:DesignWidth="1280"
+      d:DataContext="{d:DesignInstance Zeus:MainWindowViewModel}"
+      Title="VendorDetailPage">
+
+    <Page.Resources>
+        <Style TargetType="Page">
+            <Setter Property="Foreground" Value="#2C5066" />
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BorderBrush" Value="White"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Foreground" Value="#2C5066" />
+        </Style>
+    </Page.Resources>
+    
+    <Grid ShowGridLines="false" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="14*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!-- header -->
+        <TextBlock Grid.Row="0" Text="PROVEEDOR" FontSize="24" Margin="20,0"></TextBlock>
+
+
+        <Grid Grid.Row="1" Background="White" Margin="5">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48*"></ColumnDefinition>
+                <ColumnDefinition Width="347*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="7*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Foreground="Gray" Grid.ColumnSpan="2" Text="Registro de Proveedor" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="1" Text="Nombre"></TextBlock>
+                <TextBlock Grid.Row="2" Text="Correo Electrónico"></TextBlock>
+                <TextBlock Grid.Row="3" Text="Teléfono"></TextBlock>
+                <TextBlock Grid.Row="4" Text="RFC"></TextBlock>
+                <TextBlock Grid.Row="5" Text="Razón Social"></TextBlock>
+                <TextBlock Grid.Row="6" Text="Banco"></TextBlock>
+                <TextBlock Grid.Row="7" Text="Cuenta Interbancaria"></TextBlock>
+
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.Name}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.Email}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.Phone}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.Rfc}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
+                <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.BusinessName}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.Bank}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="7" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.BankAccount}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+            </Grid>
+        </Grid>
+        <!-- footer menu -->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ChangePageCommand}" CommandParameter="vendors" HorizontalAlignment="Center" Width="200" Margin="5">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\Cancel.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Cancelar" ></TextBlock>
+                </Grid>
+            </Button>
+            <Button Grid.Column="2" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding VendorDeleteCommand}" HorizontalAlignment="Center" Width="200" Margin="5">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\Delete.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Eliminar" ></TextBlock>
+                </Grid>
+            </Button>
+            <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding VendorSaveChangesCommand}"  Width="200" Margin="5" >
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\guardar.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Guardar" ></TextBlock>
+                </Grid>
+            </Button>
+        </Grid>
+        
+    </Grid>
+</Page>

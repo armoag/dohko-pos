@@ -1,0 +1,128 @@
+﻿<Page x:Class="Dohko.PaymentPartialPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Dohko"
+      xmlns:Zeus="clr-namespace:Zeus;assembly=Zeus"
+      mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance Zeus:MainWindowViewModel}"
+      d:DesignHeight="950" d:DesignWidth="1280"
+      Title="PaymentPage"
+      FontFamily="..\Resources\Fonts\#Comfortaa">
+
+    <Page.Resources>
+        <Style TargetType="Page">
+            <Setter Property="Foreground" Value="#2C5066" />
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BorderBrush" Value="White"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Foreground" Value="#2C5066" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <!--Main Grid definition-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>            
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>            
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--Display client information-->
+        <Grid Grid.Row="0">
+            <TextBlock Text="{Binding CurrentCustomer.Name, StringFormat='Cliente: {0}'}" HorizontalAlignment="Center" Foreground="Gray"></TextBlock>
+        </Grid>
+      
+        
+        <!--Diplay Totals-->
+        <Grid Grid.Row="1" ShowGridLines="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Total Pesos" Foreground="Gray" HorizontalAlignment="Center" ></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="Total Dólar" Foreground="Gray" HorizontalAlignment="Center" ></TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="1" Foreground="#FFD10202" Margin="5,5,2.5,5" HorizontalAlignment="Center" FontSize="32" Text="{Binding PaymentTotalMXN, StringFormat='${0}'}"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="1" Foreground="#FF009E2B" Margin="2.5,5,5,5" HorizontalAlignment="Center" FontSize="32" Text="{Binding PaymentTotalUSD, StringFormat='${0}'}"></TextBlock>
+        </Grid>
+        <!--Separador-->
+        <TextBlock Grid.Row="2" Background="#FFECECEC" Height="2" VerticalAlignment="Top"></TextBlock>
+        <!--Quantity paid shortcuts-->
+        <Grid Grid.Row="3" ShowGridLines="False">
+            <!--Main Grid definition-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="0"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- Paid Amount and process payment in MXN-->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>                    
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column ="0" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Efectivo Pesos"></TextBlock>
+                <TextBox Grid.Row="1" Grid.Column ="0" Margin="5,5,5,5" FontSize="24" Foreground="Red" Text="{Binding PaymentPartialCashMXN, Mode=TwoWay, StringFormat='${0}'}" MinHeight="40" MaxWidth="150" VerticalAlignment="Top" HorizontalContentAlignment="Center"></TextBox>
+                <TextBlock Grid.Row="0" Grid.Column ="1" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Efectivo Dólares"></TextBlock>
+                <TextBox Grid.Row="1" Grid.Column ="1" Margin="5,5,5,5" FontSize="24" Foreground="Red" Text="{Binding PaymentPartialCashUSD, Mode=TwoWay, StringFormat='${0}'}" MinHeight="40" MaxWidth="150" VerticalAlignment="Top" HorizontalContentAlignment="Center"></TextBox>
+                <TextBlock Grid.Row="0" Grid.Column ="2" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Tarjeta Pesos"></TextBlock>
+                <TextBox Grid.Row="1" Grid.Column ="2" Margin="5,5,5,5" FontSize="24" Foreground="Red" Text="{Binding PaymentPartialCardMXN, Mode=TwoWay, StringFormat='${0}'}" MinHeight="40" MaxWidth="150" VerticalAlignment="Top" HorizontalContentAlignment="Center"></TextBox>
+            </Grid>
+            <!-- Paid Amount and process payment in USD-->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column ="0" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Cheque Pesos"></TextBlock>
+                <TextBox Grid.Row="1" Grid.Column ="0" Margin="5,5,5,5" FontSize="24" Foreground="Red" Text="{Binding PaymentPartialCheckMXN, Mode=TwoWay, StringFormat='${0}'}" MinHeight="40" MaxWidth="150" VerticalAlignment="Top" HorizontalContentAlignment="Center"></TextBox>
+                <TextBlock Grid.Row="2" Text="Diferencia:" HorizontalAlignment="Right"></TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column ="1" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Transferencia Pesos"></TextBlock>
+                <TextBox Grid.Row="1" Grid.Column ="1" Margin="5,5,5,5" FontSize="24" Foreground="Red" Text="{Binding PaymentPartialTransferMXN, Mode=TwoWay, StringFormat='${0}'}" MinHeight="40" MaxWidth="150" VerticalAlignment="Top" HorizontalContentAlignment="Center"></TextBox>
+                <TextBlock Grid.Row="2" Grid.Column ="1" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding PaymentRemainingMXN, Mode=TwoWay, StringFormat='Pesos: ${0}'}"></TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column ="2" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Otro Pesos"></TextBlock>
+                <TextBox Grid.Row="1" Grid.Column ="2" Margin="5,5,5,5" FontSize="24" Foreground="Red" Text="{Binding PaymentPartialOtherMXN, Mode=TwoWay, StringFormat='${0}'}" MinHeight="40" MaxWidth="150" VerticalAlignment="Top" HorizontalContentAlignment="Center"></TextBox>
+                <TextBlock Grid.Row="2" Grid.Column ="2" Foreground="Gray" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding PaymentRemainingUSD, Mode=TwoWay, StringFormat='Dólar: ${0}'}"></TextBlock>
+            </Grid>
+        </Grid>
+        <Button Grid.Row="4" FontSize="24" FontWeight="Bold" Foreground="DarkGreen" Background="#FF8BD48B" Content="PROCESAR PAGO PARCIAL" Command="{Binding ChangePageCommand}" CommandParameter="Parcial" BorderBrush="{x:Null}" Click="Button_Click"></Button>
+        
+        
+    </Grid>
+</Page>

@@ -1,0 +1,62 @@
+﻿<Page x:Class="Dohko.RemoveInventoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Dohko"
+      xmlns:Zeus="clr-namespace:Zeus;assembly=Zeus"
+      mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance Zeus:MainWindowViewModel}"
+      d:DesignHeight="950" d:DesignWidth="1280"
+      Title="PaymentPage"
+      FontFamily="..\Resources\Fonts\#Comfortaa">
+
+    <Page.Resources>
+        <Style TargetType="Page">
+            <Setter Property="Foreground" Value="#2C5066" />
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BorderBrush" Value="White"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Foreground" Value="#2C5066" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <!--Main Grid definition-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>            
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>            
+            <RowDefinition Height="2.8*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--Display client information-->
+        <Grid Grid.Row="0">
+            <TextBlock Text="{Binding CurrentUser.Name, StringFormat='Usuario: {0}'}" HorizontalAlignment="Center" Foreground="Gray"></TextBlock>
+        </Grid>
+        
+        <!--Separador-->
+        <TextBlock Grid.Row="2" Background="#FFECECEC" Height="2" VerticalAlignment="Top"></TextBlock>
+        <!--Quantity paid shortcuts-->
+        <TextBlock Grid.Row="3" Text="El producto será eliminado del inventario." FontSize="30" HorizontalAlignment="Center"></TextBlock>
+        <Button Grid.Row="4" x:Name="ConfirmInventoryRemovalBtn" FontSize="24" FontWeight="Bold" Foreground="White" Background="OrangeRed" Content="CONFIRMAR" Command="{Binding ChangePageCommand}" CommandParameter="end_remove_inventory" BorderBrush="{x:Null}"></Button>
+    </Grid>
+</Page>

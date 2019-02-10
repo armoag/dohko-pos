@@ -1,0 +1,322 @@
+﻿<Window x:Class="Dohko.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dohko"
+        xmlns:m="using:Dohko"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:zeus="clr-namespace:Zeus;assembly=Zeus"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance zeus:MainWindowViewModel}"
+        Title="Wibsar Retail" Height="1080" Width="1920" FontFamily=".\Resources\Fonts\#Comfortaa">
+
+    <Window.Resources>
+        <Style TargetType="Page">
+            <Setter Property="Foreground" Value="#2C5066" />
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BorderBrush" Value="White"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Foreground" Value="#2C5066" />
+        </Style>
+        <Style TargetType="{x:Type ListBox}">
+            <Setter Property="Background" Value="#FFF" />
+            <Setter Property="Foreground" Value="#2C5066" />
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="AlternationCount" Value="2" />          
+        </Style>
+        <Style TargetType="{x:Type ListBoxItem}">            
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="White"></Setter>
+                </Trigger>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="WhiteSmoke"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>       
+        
+    </Window.Resources>
+
+    <!-- Main Window Grid -->
+    <Grid ShowGridLines="False" Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height=".1*"></RowDefinition>
+            <RowDefinition Height="15*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!-- Grid for header section -->
+        <Grid Column="0" Row="0" Grid.ColumnSpan="2">
+            <!-- Client logo -->
+            <Image Source="C:\Projects\seiya-pos\Data\Images\tulogo.png" HorizontalAlignment="Center" MaxWidth="500"  ></Image>
+            <Grid ShowGridLines="False">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>                    
+                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Command="{Binding ChangePageCommand}" CommandParameter="menu">
+                    <Grid Margin="10">
+                        <Image Grid.Row="0" Source="Resources\Images\menu.png"></Image>
+                    </Grid>
+                </Button>
+            </Grid>
+        </Grid>
+        <!-- Linea gris -->
+        <TextBlock Grid.Row="1" Height="1" Background="#FFECECEC"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Height="1" Background="#FFECECEC"></TextBlock>
+        <!-- Grid for category boxes -->
+        <Grid Column="0" Row="2" >
+            <!-- Need to bind the source to choose page depending on selection-->
+            <Border BorderBrush="LightBlue" >
+                <Frame x:Name="Main" Source="{Binding CurrentPage}"  NavigationUIVisibility="Hidden" Margin="-1,0,1.2,0">
+                </Frame>
+            </Border>
+        </Grid>
+        <TextBlock Grid.Column="1" Grid.Row="0" ></TextBlock>
+
+        <Grid Column="1" Row="0">
+            <Grid ShowGridLines="False">
+                <Grid.ColumnDefinitions>
+                   
+                    <ColumnDefinition Width="7*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Button Grid.Column="1" Command="{Binding LoginPageCommand}" CommandParameter="login">
+                    <Grid Margin="10">
+                        <Image Grid.Row="0" Source="Resources\Images\Usuario.png"></Image>
+                    </Grid>
+                </Button>
+                <TextBlock Grid.Column="0" Text="{Binding CurrentUser.Name}" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24" ></TextBlock>
+            </Grid>
+        </Grid>
+        <!-- Grid for checkout section -->
+        <Grid Column="1" Row="2">
+
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="10*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!-- Top for cart selection-->
+                <Grid Row="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Column="0" >
+                        <Button Command="{Binding CartNumberClickCommand}" CommandParameter="1">
+                            <Image Source="Resources\Images\1 inactivo.png"></Image>
+                        </Button>
+                    </Grid>
+                    <Grid Column="1">
+                        <Button Command="{Binding CartNumberClickCommand}" CommandParameter="2">
+                            <Image Source="Resources\Images\2 inactivo.png"></Image>
+                        </Button>
+                    </Grid>
+                    <Grid Column="2">
+                        <Button Command="{Binding CartNumberClickCommand}" CommandParameter="3">
+                            <Image Source="Resources\Images\3 Inactivo.png"></Image>
+                        </Button>
+                    </Grid>
+                </Grid>
+
+                <!-- List of products -->
+                <ListBox x:Name ="ProductListBox" Grid.Row="1" BorderBrush="#FFECECEC" ItemsSource="{Binding CurrentCartProducts, Mode=TwoWay}" SelectedItem="{Binding SelectedCartProduct, Mode=TwoWay}" SelectionChanged="ProductListBox_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Description}" HorizontalAlignment="Stretch" FontSize="24" Foreground="#FF0E2D3B"></TextBlock>
+                                <TextBlock Text="{Binding Category}" HorizontalAlignment="Stretch" FontSize="16" Foreground="Gray"></TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding LastQuantitySold}" HorizontalAlignment="Left" FontSize="24" Foreground="#FF0074FF"></TextBlock>
+                                    <TextBlock Text=" x " FontSize="16" Foreground="gray" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="{Binding Price, StringFormat='${0}'}" FontSize="24" Foreground="#FF0E2D3B"></TextBlock>
+                                    <TextBlock Text="  =  " FontSize="14" Foreground="gray" VerticalAlignment="Center"></TextBlock>
+                                    <TextBlock Text="{Binding LastAmountSold, StringFormat='${0}'}" FontSize="24" Foreground="#FF00BB00"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <Grid Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Column="0">
+                        <Button Content ="-" FontSize="30" Command="{Binding SubtractFromProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem, Mode=TwoWay}" Background="#FFF3F3F3" BorderBrush="LightGray"></Button>
+                    </Grid>
+                    <Grid Column="1">
+                        <Button Content ="+" FontSize="30" Command="{Binding AddToProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem}" ></Button>
+                    </Grid>
+                    <Grid Column="2">
+                        <Button Content ="%" FontSize="20" Command="{Binding ApplyDiscountToProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem}" Background="#FFF3F3F3" BorderBrush="LightGray" ></Button>
+                    </Grid>
+                    <Grid Column="3">
+                        <Button Content ="Limpiar" Command="{Binding ClearCurrentProductListCommand}"></Button>
+                    </Grid>
+                    <Grid Column="4">
+                        <Button Content ="Inv" Command="{Binding ChangePageCommand}" CommandParameter="remove_inventory" Background="#FFF3F3F3" BorderBrush="LightGray"></Button>
+                    </Grid>
+                </Grid>
+                <!-- Bottom for price display and payment -->
+                <Grid Row="3" ShowGridLines="True">
+                    <Button Command="{Binding ChangePageCommand}" CommandParameter="payment" BorderBrush="{x:Null}"  FontSize="24" Background="Red" Margin="0,0,0,1">
+                        <TextBlock Grid.Column="1" Text="{Binding PaymentTotalMXN, Mode=TwoWay, StringFormat='Pagar: ${0}'}" FontSize="24" VerticalAlignment="Center" Margin="5" Foreground="White" ></TextBlock>                       
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- Grid for categories selection -->
+        <Grid Column="0" Row="3" >
+
+            <Grid ShowGridLines="False" Margin="0,0,5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid Column="0" Margin="0,0,2,0">
+                    <Button Command="{Binding ChangePageCommand}" CommandParameter="general">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="Resources\Images\linea roja.png"></Image>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="General" FontSize="18"/>
+                        </Grid>
+                    </Button>
+                </Grid>
+
+                <Grid Column="1" Margin="2,0,2,0">
+                    <Button Command="{Binding ChangePageCommand}" CommandParameter="product_list_1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="Resources\Images\linea amarilla.png"></Image>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageOneTitle}" FontSize="18"/>
+                        </Grid>
+                    </Button>
+                </Grid>
+
+                <Grid Column="2" Margin="2,0,2,0">
+                    <Button Command="{Binding ChangePageCommand}" CommandParameter="product_list_2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="Resources\Images\linea morada.png"></Image>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageTwoTitle}" FontSize="18"/>
+                        </Grid>
+                    </Button>
+                </Grid>
+
+                <Grid Column="3" Margin="2,0,2,0">
+                    <Button Command="{Binding ChangePageCommand}" CommandParameter="product_list_3">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="Resources\Images\linea verde.png"></Image>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageThreeTitle}" FontSize="18"/>
+                        </Grid>
+                    </Button>
+                </Grid>
+
+                <Grid Column="4" Margin="2,0,2,0">
+                    <Button Command="{Binding ChangePageCommand}" CommandParameter="product_list_4">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="Resources\Images\linea naranja.png"></Image>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageFourTitle}" FontSize="18"/>
+                        </Grid>
+                    </Button>
+                </Grid>
+
+                <Grid Column="5" Margin="2,0,2,0">
+                    <Button Command="{Binding ChangePageCommand}" CommandParameter="product_list_5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" Source="Resources\Images\linea azul.png"></Image>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageFiveTitle}" FontSize="18"/>
+                        </Grid>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- Grid for scan or search code box -->
+        <Grid Column="1" Row="3">
+            <Grid ShowGridLines="False">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="txtCode" Grid.Column="0" Text="{Binding Code, UpdateSourceTrigger=PropertyChanged}" GotFocus="TxtCode_OnMouseLeftButtonDown" VerticalAlignment="Center" Height="30" Foreground="{Binding CodeColor}">
+                    <TextBox.InputBindings>
+                        <!--MouseBinding MouseAction="LeftClick" Command="{Binding CodeLeftClickClearCommand}"></ -->
+                        <KeyBinding Command="{Binding SearchCodeCommand}" Key="Enter" CommandParameter="{Binding Code}"></KeyBinding>
+                    </TextBox.InputBindings>
+                </TextBox>
+                <Button Command="{Binding SearchCodeCommand}" CommandParameter="{Binding Code}" Grid.Column="1" >
+                    <Image Source="Resources\Images\lupa activa.png" Margin="5"></Image>
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Window>
+

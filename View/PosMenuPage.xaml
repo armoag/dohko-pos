@@ -1,0 +1,219 @@
+﻿<Page x:Class="Dohko.PosMenuPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Dohko"
+      xmlns:Zeus="clr-namespace:Zeus;assembly=Zeus"
+      mc:Ignorable="d" 
+      d:DataContext="{d:DesignInstance Zeus:MainWindowViewModel}"
+      d:DesignHeight="950" d:DesignWidth="1280"
+      Title="PosMenuPage"
+      FontFamily="..\Resources\Fonts\#Comfortaa">
+
+    <Page.Resources>
+        <Style TargetType="Page">
+            <Setter Property="Foreground" Value="#2C5066" />
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BorderBrush" Value="White"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Foreground" Value="#2C5066"></Setter>            
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Foreground" Value="#2C5066" />
+            <Setter Property="Margin" Value="3"></Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="0" Command="{Binding ChangePageCommand}" CommandParameter="inventory" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\inventario.png"></Image>
+                <TextBlock Grid.Row="1" Text="Inventario"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="0" Grid.Column="1" Command="{Binding ChangePageCommand}" CommandParameter="product_list" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\grupos.png"></Image>
+                <TextBlock Grid.Row="1" Text="Grupos"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="0" Grid.Column="2" Command="{Binding ChangePageCommand}" CommandParameter="exchange_rate" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\tc.png"></Image>
+                <TextBlock Grid.Row="1" Text="Tipo de Cambio"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="0" Grid.Column="3" Command="{Binding ChangePageCommand}" CommandParameter="categories_edit" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Source="..\Resources\Images\categorias.png">
+                </Image>
+                <TextBlock Grid.Row ="1" Text="Categorías" HorizontalAlignment="Center"></TextBlock>
+            </Grid>
+
+        </Button>
+        <Button Grid.Row="1" Grid.Column="0" Command="{Binding ChangePageCommand}" CommandParameter="users" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\usuario.png"></Image>
+                <TextBlock Grid.Row="1" Text="Usuarios"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="1" Command="{Binding ChangePageCommand}" CommandParameter="customers" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\clientes.png"></Image>
+                <TextBlock Grid.Row="1" Text="Clientes"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="2" Command="{Binding ChangePageCommand}" CommandParameter="vendors" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\proveedores.png"></Image>
+                <TextBlock Grid.Row="1" Text="Proveedor"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="3" Command="{Binding ChangePageCommand}" CommandParameter="orders" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\pedidos.png"></Image>
+                <TextBlock Grid.Row="1" Text="Pedidos"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="0" Command="{Binding ChangePageCommand}" CommandParameter="returns" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\Devolucion.png"></Image>
+                <TextBlock Grid.Row="1" Text="Devolución"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="1" Command="{Binding ChangePageCommand}" CommandParameter="expenses" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\gastos.png"></Image>
+                <TextBlock Grid.Row="1" Text="Gastos"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="2" Command="{Binding ChangePageCommand}" CommandParameter="calculator" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\Calculadora.png"></Image>
+                <TextBlock Grid.Row="1" Text="Calculadora"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="2" Grid.Column="3" Command="{Binding ChangePageCommand}" CommandParameter="analysis" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\analisis.png"></Image>
+                <TextBlock Grid.Row="1" Text="Análisis"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="0" Command="{Binding ChangePageCommand}" CommandParameter="system" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\Sistema.png"></Image>
+                <TextBlock Grid.Row="1" Text="Sistema"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="1" Command="{Binding ChangePageCommand}" CommandParameter="support" BorderBrush="{x:Null}" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\Soporte.png"></Image>
+                <TextBlock Grid.Row="1" Text="Soporte Técnico"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="2" Command="{Binding ChangePageCommand}" CommandParameter="sales_report" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\corte.png"></Image>
+                <TextBlock Grid.Row="1" Text="Corte"></TextBlock>
+            </Grid>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="3" Command="{Binding ChangePageCommand}" CommandParameter="others" BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="..\Resources\Images\Otros.png"></Image>
+                <TextBlock Grid.Row="1" Text="Otros"></TextBlock>
+            </Grid>
+        </Button>
+    </Grid>
+
+</Page>
