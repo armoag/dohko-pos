@@ -22,7 +22,7 @@ namespace Dohko
         public ExchangeRatePage()
         {
             InitializeComponent();
-            DataContext = MainWindowViewModel.GetInstance();
+            DataContext = MainWindowViewModel.GetInstance(null, null);
         }
     }
 }

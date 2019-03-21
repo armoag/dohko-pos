@@ -87,7 +87,17 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height=".3*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Código"></TextBlock>
@@ -99,16 +109,27 @@
                 <TextBlock Grid.Row="6" Text="Precio"></TextBlock>
                 <TextBlock Grid.Row="7" Text="Moneda de Precio"></TextBlock>
                 <TextBlock Grid.Row="8" Background="LightGray" Height="2" Margin="0"></TextBlock>
-                <TextBlock Grid.Row="9" Text="Costos"></TextBlock>
+                <TextBlock Grid.Row="9" Text="Costo"></TextBlock>
                 <TextBlock Grid.Row="10" Text="Moneda de Costo"></TextBlock>
-                <TextBlock Grid.Row="11" Text="Bajas de Inventario"></TextBlock>
-                <TextBlock Grid.Row="12" Text="Unidades Vendidas"></TextBlock>
-                <TextBlock Grid.Row="13" Text="Historial Vendido ($)"></TextBlock>
-                <TextBlock Grid.Row="14" Text="Inventario Local"></TextBlock>
-                <TextBlock Grid.Row="15" Text="Inventario Total"></TextBlock>
-                <TextBlock Grid.Row="16" Text="Inventario Mínimo"></TextBlock>
-                <TextBlock Grid.Row="17" Text="Ultima Compra"></TextBlock>
-                <TextBlock Grid.Row="18" Text="Ultima Venta"></TextBlock>
+                <TextBlock Grid.Row="11" Text="Importacion Costo"></TextBlock>
+                <TextBlock Grid.Row="12" Text="Moneda de Importacion"></TextBlock>
+                <TextBlock Grid.Row="13" Text="Bajas de Inventario"></TextBlock>
+                <TextBlock Grid.Row="14" Text="Unidades Vendidas"></TextBlock>
+                <TextBlock Grid.Row="15" Text="Historial Vendido ($)"></TextBlock>
+                <TextBlock Grid.Row="16" Text="Inventario Local"></TextBlock>
+                <TextBlock Grid.Row="17" Text="Inventario Total"></TextBlock>
+                <TextBlock Grid.Row="18" Text="Inventario Mínimo"></TextBlock>
+                <TextBlock Grid.Row="19" Text="Ultima Compra"></TextBlock>
+                <TextBlock Grid.Row="20" Text="Ultima Venta"></TextBlock>
+                <TextBlock Grid.Row="21" Background="LightGray" Height="2" Margin="0"></TextBlock>
+                <TextBlock Grid.Row="22" Text="VIN"></TextBlock>
+                <TextBlock Grid.Row="23" Text="Marca"></TextBlock>
+                <TextBlock Grid.Row="24" Text="Modelo"></TextBlock>
+                <TextBlock Grid.Row="25" Text="Año"></TextBlock>
+                <TextBlock Grid.Row="26" Text="Transmision"></TextBlock>
+                <TextBlock Grid.Row="27" Text="Color"></TextBlock>
+                <TextBlock Grid.Row="28" Text="Ubicacion"></TextBlock>
+                <TextBlock Grid.Row="29" Text="Pasillo"></TextBlock>
             </Grid>
             <!-- Inputs for Product properties -->
             <Grid Grid.Column="1">
@@ -132,7 +153,17 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height=".3*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <TextBox Grid.Row="0" Margin="2" Text="{Binding InventoryTemporalItem.Code}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
@@ -146,14 +177,25 @@
                 <TextBlock Grid.Row="8" Background="LightGray" Height="2" Margin="0"></TextBlock>
                 <TextBox Grid.Row="9" Margin="2" Text="{Binding InventoryTemporalItem.Cost, StringFormat='${0}'}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
                 <ComboBox Grid.Row="10" Margin="2" ItemsSource="{Binding InventoryCostCurrencyTypes, Mode=TwoWay}" SelectedItem="{Binding InventoryTemporalItem.CostCurrency, Mode=TwoWay}" FontSize="18" VerticalContentAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
-                <TextBlock Grid.Row="11" Margin="2" Text="{Binding InventoryTemporalItem.InternalQuantity}"></TextBlock>
-                <TextBlock Grid.Row="12" Margin="2" Text="{Binding InventoryTemporalItem.QuantitySold}"></TextBlock>
-                <TextBlock Grid.Row="13" Margin="2" Text="{Binding InventoryTemporalItem.AmountSold, StringFormat='${0}'}"></TextBlock>
-                <TextBox Grid.Row="14" Margin="2" Text="{Binding InventoryTemporalItem.LocalQuantityAvailable}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
-                <TextBox Grid.Row="15" Margin="2" Text="{Binding InventoryTemporalItem.TotalQuantityAvailable}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
-                <TextBox Grid.Row="16" Margin="2" Text="{Binding InventoryTemporalItem.MinimumStockQuantity}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
-                <DatePicker Grid.Row="17" Margin="2" SelectedDate="{Binding InventoryTemporalItem.LastPurchaseDate}" CalendarStyle="{StaticResource StyleCalendar}"></DatePicker>
-                <TextBlock Grid.Row="18" Margin="2" Text="{Binding InventoryTemporalItem.LastSaleDateString}"></TextBlock>
+                <TextBox Grid.Row="11" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.ImportCost), StringFormat='${0}'}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
+                <ComboBox Grid.Row="12" Margin="2" ItemsSource="{Binding InventoryCostCurrencyTypes, Mode=TwoWay}" SelectedItem="{Binding InventoryTemporalItem.(zeus:CarPart.ImportCostCurrency), Mode=TwoWay}" FontSize="18" VerticalContentAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
+                <TextBlock Grid.Row="13" Margin="2" Text="{Binding InventoryTemporalItem.InternalQuantity}"></TextBlock>
+                <TextBlock Grid.Row="14" Margin="2" Text="{Binding InventoryTemporalItem.QuantitySold}"></TextBlock>
+                <TextBlock Grid.Row="15" Margin="2" Text="{Binding InventoryTemporalItem.AmountSold, StringFormat='${0}'}"></TextBlock>
+                <TextBox Grid.Row="16" Margin="2" Text="{Binding InventoryTemporalItem.LocalQuantityAvailable}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
+                <TextBox Grid.Row="17" Margin="2" Text="{Binding InventoryTemporalItem.TotalQuantityAvailable}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
+                <TextBox Grid.Row="18" Margin="2" Text="{Binding InventoryTemporalItem.MinimumStockQuantity}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
+                <DatePicker Grid.Row="19" Margin="2" SelectedDate="{Binding InventoryTemporalItem.LastPurchaseDate}" CalendarStyle="{StaticResource StyleCalendar}"></DatePicker>
+                <TextBlock Grid.Row="20" Margin="2" Text="{Binding InventoryTemporalItem.LastSaleDateString}"></TextBlock>
+                <TextBlock Grid.Row="21" Background="LightGray" Height="2" Margin="0"></TextBlock>
+                <TextBox Grid.Row="22" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Vin)}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
+                <TextBox Grid.Row="23" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Make)}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
+                <TextBox Grid.Row="24" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Model)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="25" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Year)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="26" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Transmission)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="27" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Color)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="28" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Location)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="29" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.SpecificLocation)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
             </Grid>
 
             <Grid Grid.Column="2" Grid.Row="1">
@@ -217,7 +259,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Delete.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Cancelar" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Eliminar" ></TextBlock>
                 </Grid>
             </Button>
             <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding InventorySaveChangesCommand}" Width="200" Margin="5" >

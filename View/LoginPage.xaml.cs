@@ -23,7 +23,7 @@ namespace Dohko
     {
         public LoginPage()
         {
-            DataContext = MainWindowViewModel.GetInstance();
+            DataContext = MainWindowViewModel.GetInstance(null, null);
             InitializeComponent();
         }
 
@@ -32,7 +32,7 @@ namespace Dohko
             ((TextBox)sender).Text = Formatter.RemoveInvalidCharacters(((TextBox)sender).Text, out bool status);
             if (status)
             {
-                MainWindowViewModel.GetInstance().Code = "Símbolo inválido!";
+                MainWindowViewModel.GetInstance(null, null).Code = "Símbolo inválido!";
             }
         }
 
@@ -41,19 +41,19 @@ namespace Dohko
             ((TextBox)sender).Text = Formatter.RemoveInvalidCharacters(((TextBox)sender).Text, out var status);
             if (status)
             {
-                MainWindowViewModel.GetInstance().Code = "Símbolo inválido!";
+                MainWindowViewModel.GetInstance(null, null).Code = "Símbolo inválido!";
             }
             ((TextBox)sender).Text = Formatter.RemoveWhiteSpace(((TextBox)sender).Text, out status);
             if (status)
             {
-                MainWindowViewModel.GetInstance().Code = "Espacio inválido!";
+                MainWindowViewModel.GetInstance(null, null).Code = "Espacio inválido!";
             }
         }
 
         private void LoginPasswordBox_OnPasswordChanged(object sender, RoutedEventArgs e)
         {
             var password = LoginPasswordBox.Password;
-            MainWindowViewModel.GetInstance().LoginPasswordText = password;
+            MainWindowViewModel.GetInstance(null, null).LoginPasswordText = password;
         }
     }
 }

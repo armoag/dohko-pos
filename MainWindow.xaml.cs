@@ -23,7 +23,9 @@ namespace Dohko
     {
         public MainWindow()
         {
-            DataContext = MainWindowViewModel.GetInstance();
+   //         DataContext = MainWindowViewModel.GetInstance(TypeDefinitions.Product, TypeDefinitions.Inventory);
+            CarPart product = new CarPart();
+            DataContext = MainWindowViewModel.GetInstance(product, (CarInventory) null);
             InitializeComponent();
         }
 
@@ -33,7 +35,7 @@ namespace Dohko
             ((TextBox) sender).CaretIndex = ((TextBox) sender).Text.Length;
             if (status)
             {
-                MainWindowViewModel.GetInstance().Code = "Símbolo inválido!";
+                MainWindowViewModel.GetInstance(TypeDefinitions.Product, TypeDefinitions.Inventory).Code = "Símbolo inválido!";
             }
         }
 
@@ -43,14 +45,14 @@ namespace Dohko
             ((TextBox) sender).CaretIndex = ((TextBox) sender).Text.Length;
             if (status)
             {
-                MainWindowViewModel.GetInstance().Code = "Símbolo inválido!";
+                MainWindowViewModel.GetInstance(TypeDefinitions.Product, TypeDefinitions.Inventory).Code = "Símbolo inválido!";
             }
 
             ((TextBox) sender).Text = Formatter.RemoveWhiteSpace(((TextBox) sender).Text, out status);
             ((TextBox) sender).CaretIndex = ((TextBox) sender).Text.Length;
             if (status)
             {
-                MainWindowViewModel.GetInstance().Code = "Espacio inválido!";
+                MainWindowViewModel.GetInstance(TypeDefinitions.Product, TypeDefinitions.Inventory).Code = "Espacio inválido!";
             }
         }
 

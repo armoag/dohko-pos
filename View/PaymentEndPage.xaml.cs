@@ -23,7 +23,7 @@ namespace Dohko
     {
         public PaymentEndPage()
         {
-            this.DataContext = MainWindowViewModel.GetInstance();
+            this.DataContext = MainWindowViewModel.GetInstance(null, null);
             InitializeComponent();
             EndTransactionBtn.Focus();
         }

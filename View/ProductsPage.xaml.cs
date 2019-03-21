@@ -24,7 +24,7 @@ namespace Dohko
         public ProductsPage()
         {
             InitializeComponent();
-            this.DataContext = MainWindowViewModel.GetInstance();           
+            this.DataContext = MainWindowViewModel.GetInstance(null, null);           
         }
     }
 }

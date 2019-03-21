@@ -23,7 +23,7 @@ namespace Dohko
     {
         public RemoveInventoryPage()
         {
-            this.DataContext = MainWindowViewModel.GetInstance();
+            this.DataContext = MainWindowViewModel.GetInstance(null, null);
             InitializeComponent();
             ConfirmInventoryRemovalBtn.Focus();
         }

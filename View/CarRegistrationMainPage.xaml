@@ -4,9 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Dohko"
+      xmlns:Zeus="clr-namespace:Zeus;assembly=Zeus"
       mc:Ignorable="d" 
       d:DesignHeight="950" d:DesignWidth="1280"
-      d:DataContext="{d:DesignInstance local:CarRegistrationViewModel}"
+      d:DataContext="{d:DesignInstance Zeus:CarRegistrationViewModel}"
       Title="Yonke">
     <Page.Resources>
         <Style TargetType="Page">

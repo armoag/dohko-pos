@@ -4,9 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Dohko"
+      xmlns:zeus="clr-namespace:Zeus;assembly=Zeus"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
-      d:DataContext="{d:DesignInstance local:CarRegistrationViewModel}"
+      d:DataContext="{d:DesignInstance zeus:CarRegistrationViewModel}"
       Title="CarRegistrationList">
     <Page.Resources>
         <Style TargetType="{x:Type DataGrid}">
