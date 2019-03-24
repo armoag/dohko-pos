@@ -26,5 +26,28 @@ namespace Dohko
             DataContext = CarRegistrationViewModel.GetInstance();
             InitializeComponent();
         }
+
+        private void KeyUpNoSymbolsEvent(object sender, KeyEventArgs e)
+        {
+            ((TextBox)sender).Text = Formatter.RemoveInvalidCharacters(((TextBox)sender).Text, out bool status);
+            if (status)
+            {
+                MainWindowViewModel.GetInstance(null, null).Code = "Símbolo inválido!";
+            }
+        }
+
+        private void KeyUpNoSymbolsNoSpaceEvent(object sender, KeyEventArgs e)
+        {
+            ((TextBox)sender).Text = Formatter.RemoveInvalidCharacters(((TextBox)sender).Text, out var status);
+            if (status)
+            {
+                MainWindowViewModel.GetInstance(null, null).Code = "Símbolo inválido!";
+            }
+            ((TextBox)sender).Text = Formatter.RemoveWhiteSpace(((TextBox)sender).Text, out status);
+            if (status)
+            {
+                MainWindowViewModel.GetInstance(null, null).Code = "Espacio inválido!";
+            }
+        }
     }
 }

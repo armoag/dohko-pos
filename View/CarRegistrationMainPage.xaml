@@ -9,6 +9,7 @@
       d:DesignHeight="950" d:DesignWidth="1280"
       d:DataContext="{d:DesignInstance Zeus:CarRegistrationViewModel}"
       Title="Yonke">
+
     <Page.Resources>
         <Style TargetType="Page">
             <Setter Property="Foreground" Value="#2C5066" />
@@ -16,12 +17,42 @@
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style TargetType="Button">
-            <Setter Property="Foreground" Value="#2C5066" />
             <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
-            <Setter Property="Background" Value="#FFF0F0F0"></Setter>
-            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
-            <Setter Property="MinHeight" Value="40"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Foreground" Value="#2C5066" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Foreground" Value="#FF224458" />
+        </Style>
+        <Style x:Key="StyleCalendar" TargetType="{x:Type Calendar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Calendar}">
+                        <Viewbox Height="600" Width="600">
+                            <CalendarItem x:Name="PART_CalendarItem" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" ></CalendarItem>
+                        </Viewbox>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Page.Resources>
 
@@ -35,10 +66,10 @@
             <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <!--Header Menu-->      
-            
+        <!--Header Menu-->
+
         <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="REGISTRO DE CARRO" Margin="20,0"></TextBlock>
-       
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -69,7 +100,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="VIN" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <TextBox Grid.Row="1" MinWidth="20" MaxHeight="40"></TextBox>
+                        <TextBox Grid.Row="1" MinWidth="20" MaxHeight="40" Text="{Binding Car.Vin, Mode=TwoWay}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="0" Grid.Row="1" Margin="10,0">
@@ -84,15 +115,15 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="MARCA" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40" ItemsSource="{Binding CarBrandsList, Mode=TwoWay}" SelectedItem="{Binding Car.Make, Mode=TwoWay}"></ComboBox>
                     </Grid>
-                    <Grid Grid.Column="2">
+                    <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="AÑO" VerticalAlignment="Bottom" Margin="10,0" ></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40"></ComboBox>
+                        <TextBox Grid.Row="1" MinWidth="20" MaxHeight="40" Text="{Binding Car.Year, Mode=TwoWay}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="0" Grid.Row="2" Margin="10,0">
@@ -102,20 +133,24 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="335*"/>
+                            <ColumnDefinition Width="78*"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="MODELO / VERSION" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <TextBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40"></TextBox>
+                        <TextBlock Text="MODELO / VERSION" VerticalAlignment="Bottom" Margin="10,0,10,61" Grid.ColumnSpan="2" Grid.RowSpan="2"></TextBlock>
+                        <TextBox Grid.Column="0" Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40" Grid.ColumnSpan="2" Text ="{Binding Car.Model, Mode=TwoWay}" KeyUp="KeyUpNoSymbolsEvent" ></TextBox>
                     </Grid>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="COLOR" VerticalAlignment="Bottom" Margin="10,0" ></TextBlock>
-                        <TextBox Grid.Row="1" MinWidth="20" MaxHeight="40"></TextBox>
+                        <TextBlock Text="COLOR" VerticalAlignment="Bottom" Margin="10,0"  ></TextBlock>
+                        <TextBox Grid.Row="1" MinWidth="20" MaxHeight="40" Text ="{Binding Car.Color, Mode=TwoWay}" KeyUp="KeyUpNoSymbolsEvent" ></TextBox>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="0" Grid.Row="3" Margin="10,0">
@@ -130,7 +165,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="MOTOR" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <TextBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40"></TextBox>
+                        <TextBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40" Text ="{Binding Car.Motor, Mode=TwoWay}" KeyUp="KeyUpNoSymbolsEvent" ></TextBox>
                     </Grid>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
@@ -138,10 +173,10 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="TRANSM" VerticalAlignment="Bottom" Margin="10,0" ></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40" ItemsSource="{Binding TransmissionsList, Mode=TwoWay}" SelectedItem="{Binding Car.Transmission, Mode=TwoWay}"></ComboBox>
                     </Grid>
                 </Grid>
-                <TextBlock Grid.Row="4" Text="UBICACION" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10,0"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="4" Text="UBICACION" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10,0"></TextBlock>
                 <Grid Grid.Column="0" Grid.Row="5" Margin="10,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -153,7 +188,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="YONKE" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40" ItemsSource="{Binding LocationsList, Mode=TwoWay}" SelectedItem="{Binding Car.Location, Mode=TwoWay}"></ComboBox>
                     </Grid>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
@@ -161,7 +196,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="PASILLO" VerticalAlignment="Bottom" Margin="10,0" ></TextBlock>
-                        <TextBox Grid.Row="1" MinWidth="20" MaxHeight="40"></TextBox>
+                        <TextBox Grid.Row="1" MinWidth="20" MaxHeight="40" Text ="{Binding Car.SpecificLocation, Mode=TwoWay}" KeyUp="KeyUpNoSymbolsEvent" ></TextBox>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="1" Grid.Row="0" Margin="10,0">
@@ -176,15 +211,15 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="COSTO" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <TextBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40"></TextBox>
+                        <TextBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40" Text="{Binding Car.Cost, Mode=TwoWay}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
                     </Grid>
-                    <Grid Grid.Column="2">
+                    <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="MONEDA" VerticalAlignment="Bottom" Margin="10,0" ></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40" ItemsSource="{Binding CurrencyTypes, Mode=TwoWay}" SelectedItem="{Binding Car.CostCurrency, Mode=TwoWay}" FontSize="18" VerticalContentAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="1" Grid.Row="1" Margin="10,0">
@@ -199,15 +234,15 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="COSTO DE IMPORTACION" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <TextBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40"></TextBox>
+                        <TextBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40" Text="{Binding Car.ImportCost, Mode=TwoWay}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
                     </Grid>
-                    <Grid Grid.Column="2">
+                    <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="MONEDA" VerticalAlignment="Bottom" Margin="10,0" ></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40" ItemsSource="{Binding CurrencyTypes, Mode=TwoWay}" SelectedItem="{Binding Car.ImportCostCurrency, Mode=TwoWay}" FontSize="18" VerticalContentAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="1" Grid.Row="2" Margin="10,0">
@@ -217,7 +252,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="FECHA DE COMPRA" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <DatePicker Grid.Row="1" MinWidth="20" MaxHeight="40"></DatePicker>
+                        <DatePicker Grid.Row="1" MinWidth="20" MaxHeight="40" SelectedDate="{Binding Car.LastPurchaseDate}" CalendarStyle="{StaticResource StyleCalendar}" ></DatePicker>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="1" Grid.Row="3" Margin="10,0">
@@ -227,12 +262,12 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="LUGAR DE COMPRA" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <TextBox Grid.Row="1" MinWidth="20" MaxHeight="40"></TextBox>
+                        <TextBox Grid.Row="1" MinWidth="20" MaxHeight="40" Text ="{Binding Car.Provider, Mode=TwoWay}" KeyUp="KeyUpNoSymbolsEvent" ></TextBox>
                     </Grid>
                 </Grid>
             </Grid>
         </Grid>
-      
+
         <!-- footer menu -->
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -252,16 +287,16 @@
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Cancelar" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ChangePageCommand}" CommandParameter="search_list" HorizontalAlignment="Center" MinWidth="200" Margin="5" >
+            <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ChangePageCommand}" CommandParameter="part_list" HorizontalAlignment="Center" MinWidth="200" Margin="5" >
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Guardar.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Registrar" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Siguiente" ></TextBlock>
                 </Grid>
-            </Button>            
+            </Button>
         </Grid>
     </Grid>
 </Page>
