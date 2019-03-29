@@ -9,7 +9,8 @@
         xmlns:zeus="clr-namespace:Zeus;assembly=Zeus"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance zeus:MainWindowViewModel}"
-        Title="Wibsar Retail" Height="1080" Width="1920" FontFamily=".\Resources\Fonts\#Comfortaa">
+        Title="Wibsar Retail" Height="1080" Width="1920" FontFamily=".\Resources\Fonts\#Comfortaa"
+        WindowState="Maximized">
 
     <Window.Resources>
         <Style TargetType="Page">

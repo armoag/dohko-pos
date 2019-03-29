@@ -123,7 +123,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
                 
-            <Button Grid.Column="0" Margin="20,0,20,0" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ImportExportCarCommand}" CommandParameter="import">                
+            <Button Grid.Column="0" Margin="20,0,20,0" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ImportExportCarCommand}" CommandParameter="export">                
                  <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
