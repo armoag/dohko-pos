@@ -73,9 +73,9 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="REGISTRO DE CARRO"></TextBlock>
-            <TextBox Grid.Column="1" x:Name="CarPartSearchTextBox" AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center"/>
-            <Button Grid.Column="2" Command="{Binding SearchListCommand}" CommandParameter="{Binding ElementName=CarPartSearchTextBox}">
-                <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image>
+            <TextBox Grid.Column="1" x:Name="CarPartSearchTextBox" Text="{Binding PartsSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center"/>
+            <Button Grid.Column="2" Command="{Binding SearchListCommand}" CommandParameter="freesearch">
+                <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image> 
             </Button>
         </Grid>
         <Grid Row="1">
@@ -89,26 +89,26 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="A" Command="{Binding SearchListCommand}" CommandParameter="a" Height="80"></Button>
-            <Button Grid.Column="1" Content="B" Command="{Binding SearchListCommand}" CommandParameter="b" Height="80"></Button>
-            <Button Grid.Column="2" Content="C" Command="{Binding SearchListCommand}" CommandParameter="c" Height="80"></Button>
-            <Button Grid.Column="3" Content="D" Command="{Binding SearchListCommand}" CommandParameter="d" Height="80"></Button>
-            <Button Grid.Column="4" Content="E" Command="{Binding SearchListCommand}" CommandParameter="e" Height="80"></Button>
-            <Button Grid.Column="5" Content="F" Command="{Binding SearchListCommand}" CommandParameter="f" Height="80"></Button>
-            <Button Grid.Column="6" Content="G" Command="{Binding SearchListCommand}" CommandParameter="g" Height="80"></Button>
-            <Button Grid.Column="7" Content="H" Command="{Binding SearchListCommand}" CommandParameter="h" Height="80"></Button>
+            <Button Grid.Column="0" Content="Carroceria" Command="{Binding SearchListCommand}" CommandParameter="a" Height="80"></Button>
+            <Button Grid.Column="1" Content="Suspencion Delantera" Command="{Binding SearchListCommand}" CommandParameter="b" Height="80"></Button>
+            <Button Grid.Column="2" Content="Suspencion Trasera" Command="{Binding SearchListCommand}" CommandParameter="c" Height="80"></Button>
+            <Button Grid.Column="3" Content="Interior" Command="{Binding SearchListCommand}" CommandParameter="d" Height="80"></Button>
+            <Button Grid.Column="4" Content="Exterior" Command="{Binding SearchListCommand}" CommandParameter="e" Height="80"></Button>
+            <Button Grid.Column="5" Content="Motor" Command="{Binding SearchListCommand}" CommandParameter="f" Height="80"></Button>
+            <Button Grid.Column="6" Content="Transmision" Command="{Binding SearchListCommand}" CommandParameter="g" Height="80"></Button>
+            <Button Grid.Column="7" Content="Misc" Command="{Binding SearchListCommand}" CommandParameter="h" Height="80"></Button>
         </Grid>
         <Grid Row="2">            
             <DataGrid x:Name="CarAccessoriesData" Margin="0,6,0,0" HeadersVisibility="Column" ItemsSource="{Binding CarPartsSearchedEntries}" SelectedItem="{Binding SelectedCarPart, Mode =TwoWay}" CanUserSortColumns="False" CanUserReorderColumns="False" AutoGenerateColumns="False" BorderBrush="{x:Null}" SelectionMode="Single">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="*" Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header=" Id" IsReadOnly="True"/>
-                    <DataGridTextColumn Width="3*" Binding="{Binding Vin}" ClipboardContentBinding="{x:Null}" Header=" Vin" IsReadOnly="True"/>
-                    <DataGridTextColumn Width="2*" Binding="{Binding Model}" ClipboardContentBinding="{x:Null}" Header=" Modelo" IsReadOnly="True"/>
+                    <DataGridTextColumn Width="*" Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header=" Id" IsReadOnly="False"/>
+                    <DataGridTextColumn Width="3*" Binding="{Binding Code}" ClipboardContentBinding="{x:Null}" Header=" Código" IsReadOnly="False"/>
+                    <DataGridTextColumn Width="2*" Binding="{Binding Model}" ClipboardContentBinding="{x:Null}" Header=" Modelo" IsReadOnly="False"/>
                     <DataGridTextColumn Width="5*" Binding="{Binding Description}" ClipboardContentBinding="{x:Null}" Header=" Descripción" IsReadOnly="False"/>
                     <DataGridTextColumn Width="1.5*" Binding="{Binding Category}" ClipboardContentBinding="{x:Null}" Header=" Categoria" IsReadOnly="False"/>
                     <DataGridTextColumn Width="*" Binding="{Binding Price}" ClipboardContentBinding="{x:Null}" Header="Monto" IsReadOnly="False"/>
                     <DataGridTextColumn Width="*" Binding="{Binding PriceCurrency}" ClipboardContentBinding="{x:Null}" Header=" Moneda" IsReadOnly="False"/>
-                    <DataGridCheckBoxColumn Width="*" Binding="{Binding Enabled}" ClipboardContentBinding="{x:Null}" Header=" Incluír" IsReadOnly="False"></DataGridCheckBoxColumn>
+                    <DataGridCheckBoxColumn Width="*" Binding="{Binding Valid}" ClipboardContentBinding="{x:Null}" Header=" Incluír" IsReadOnly="False" ></DataGridCheckBoxColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
