@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Dohko"
       mc:Ignorable="d" 
-      d:DesignHeight="950" d:DesignWidth="1280"
+      d:DesignHeight="1050" d:DesignWidth="1680"
       Title="AnalysisMainPage">
 
     <Page.Resources>
@@ -34,8 +34,15 @@
             
         </Grid.RowDefinitions>
         <!-- header -->
-        <TextBlock Grid.Row="0" Text="ANALISIS" FontSize="24" VerticalAlignment="Center" Margin="20,0"></TextBlock>
-        <Grid Grid.Row="1">
+        <Grid Background="#2FC6F8">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="ANALISIS" FontSize="32" VerticalAlignment="Center" Margin="20,0" Foreground="White">
+            </TextBlock>
+        </Grid>
+        
+        <Grid Grid.Row="1" Background="#F0F0F0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
