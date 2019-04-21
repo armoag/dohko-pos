@@ -9,7 +9,7 @@
         xmlns:zeus="clr-namespace:Zeus;assembly=Zeus"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance zeus:MainWindowViewModel}"
-        Title="Wibsar Retail" Height="1080" Width="1920" FontFamily=".\Resources\Fonts\#Comfortaa"
+        Title="Wibsar Retail" Height="1050" Width="1680" FontFamily=".\Resources\Fonts\#Comfortaa"
         WindowState="Maximized">
 
     <Window.Resources>
@@ -19,9 +19,10 @@
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style TargetType="Button">
-            <Setter Property="BorderBrush" Value="White"></Setter>
+            <Setter Property="BorderBrush" Value="{x:Null}"></Setter>
             <Setter Property="FontSize" Value="16"></Setter>
-            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Background" Value="#0F6D8C"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>           
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
@@ -46,26 +47,25 @@
                 <Trigger Property="ItemsControl.AlternationIndex" Value="1">
                     <Setter Property="Background" Value="WhiteSmoke"></Setter>
                 </Trigger>
-            </Style.Triggers>
+            </Style.Triggers>            
         </Style>       
         
     </Window.Resources>
 
     <!-- Main Window Grid -->
-    <Grid ShowGridLines="False" Margin="5">
+    <Grid ShowGridLines="False" Margin="5" Background="#0F6D8C">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height=".1*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>            
             <RowDefinition Height="15*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
         <!-- Grid for header section -->
-        <Grid Column="0" Row="0" Grid.ColumnSpan="2">
+        <Grid Column="0" Row="0" Grid.ColumnSpan="2" >
             <!-- Client logo -->
             <Image Source="C:\Projects\seiya-pos\Data\Images\tulogo.png" HorizontalAlignment="Center" MaxWidth="500"  ></Image>
             <Grid ShowGridLines="False">
@@ -80,14 +80,13 @@
                 </Button>
             </Grid>
         </Grid>
-        <!-- Linea gris -->
-        <TextBlock Grid.Row="1" Height="1" Background="#FFECECEC"></TextBlock>
+              
         <TextBlock Grid.Row="1" Grid.Column="1" Height="1" Background="#FFECECEC"></TextBlock>
         <!-- Grid for category boxes -->
-        <Grid Column="0" Row="2" >
+        <Grid Column="0" Row="1" >
             <!-- Need to bind the source to choose page depending on selection-->
             <Border BorderBrush="LightBlue" >
-                <Frame x:Name="Main" Source="{Binding CurrentPage}"  NavigationUIVisibility="Hidden" Margin="-1,0,1.2,0">
+                <Frame x:Name="Main" Source="{Binding CurrentPage}"  NavigationUIVisibility="Hidden" Margin="-1,0,1.2,0" Background="White">
                 </Frame>
             </Border>
         </Grid>
@@ -106,11 +105,11 @@
                         <Image Grid.Row="0" Source="Resources\Images\Usuario.png"></Image>
                     </Grid>
                 </Button>
-                <TextBlock Grid.Column="0" Text="{Binding CurrentUser.Name}" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24" ></TextBlock>
+                <TextBlock Grid.Column="0" Text="{Binding CurrentUser.Name}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24" ></TextBlock>
             </Grid>
         </Grid>
         <!-- Grid for checkout section -->
-        <Grid Column="1" Row="2">
+        <Grid Column="1" Row="1">
 
             <Grid >
                 <Grid.ColumnDefinitions>
@@ -150,7 +149,7 @@
                 </Grid>
 
                 <!-- List of products -->
-                <ListBox x:Name ="ProductListBox" Grid.Row="1" BorderBrush="#FFECECEC" ItemsSource="{Binding CurrentCartProducts, Mode=TwoWay}" SelectedItem="{Binding SelectedCartProduct, Mode=TwoWay}" SelectionChanged="ProductListBox_SelectionChanged">
+                <ListBox x:Name ="ProductListBox" Grid.Row="1" ItemsSource="{Binding CurrentCartProducts, Mode=TwoWay}" SelectedItem="{Binding SelectedCartProduct, Mode=TwoWay}" SelectionChanged="ProductListBox_SelectionChanged" Background="#F0F0F0">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -178,19 +177,19 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid Column="0">
-                        <Button Content ="-" FontSize="30" Command="{Binding SubtractFromProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem, Mode=TwoWay}" Background="#FFF3F3F3" BorderBrush="LightGray"></Button>
+                        <Button Content ="-" FontSize="30" Command="{Binding SubtractFromProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem, Mode=TwoWay}" BorderBrush="LightGray"></Button>
                     </Grid>
                     <Grid Column="1">
                         <Button Content ="+" FontSize="30" Command="{Binding AddToProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem}" ></Button>
                     </Grid>
                     <Grid Column="2">
-                        <Button Content ="%" FontSize="20" Command="{Binding ApplyDiscountToProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem}" Background="#FFF3F3F3" BorderBrush="LightGray" ></Button>
+                        <Button Content ="%" FontSize="20" Command="{Binding ApplyDiscountToProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem}" BorderBrush="LightGray" ></Button>
                     </Grid>
                     <Grid Column="3">
                         <Button Content ="Limpiar" Command="{Binding ClearCurrentProductListCommand}"></Button>
                     </Grid>
                     <Grid Column="4">
-                        <Button Content ="Inv" Command="{Binding ChangePageCommand}" CommandParameter="remove_inventory" Background="#FFF3F3F3" BorderBrush="LightGray"></Button>
+                        <Button Content ="Inv" Command="{Binding ChangePageCommand}" CommandParameter="remove_inventory" BorderBrush="LightGray"></Button>
                     </Grid>
                 </Grid>
                 <!-- Bottom for price display and payment -->
@@ -224,7 +223,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea roja.png"></Image>
-                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="General" FontSize="18"/>
+                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="General" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>
@@ -237,7 +236,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea amarilla.png"></Image>
-                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageOneTitle}" FontSize="18"/>
+                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageOneTitle}" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>
@@ -250,7 +249,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea morada.png"></Image>
-                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageTwoTitle}" FontSize="18"/>
+                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageTwoTitle}" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>
@@ -263,7 +262,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea verde.png"></Image>
-                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageThreeTitle}" FontSize="18"/>
+                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageThreeTitle}" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>
@@ -276,7 +275,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea naranja.png"></Image>
-                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageFourTitle}" FontSize="18"/>
+                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageFourTitle}" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>
@@ -289,7 +288,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea azul.png"></Image>
-                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageFiveTitle}" FontSize="18"/>
+                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageFiveTitle}" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>
@@ -306,7 +305,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBox x:Name="txtCode" Grid.Column="0" Text="{Binding Code, UpdateSourceTrigger=PropertyChanged}" GotFocus="TxtCode_OnMouseLeftButtonDown" VerticalAlignment="Center" Height="30" Foreground="{Binding CodeColor}">
+                <TextBox x:Name="txtCode" Grid.Column="0" Text="{Binding Code, UpdateSourceTrigger=PropertyChanged}" GotFocus="TxtCode_OnMouseLeftButtonDown" VerticalAlignment="Center" Height="40" Foreground="{Binding CodeColor}">
                     <TextBox.InputBindings>
                         <!--MouseBinding MouseAction="LeftClick" Command="{Binding CodeLeftClickClearCommand}"></ -->
                         <KeyBinding Command="{Binding SearchCodeCommand}" Key="Enter" CommandParameter="{Binding Code}"></KeyBinding>
