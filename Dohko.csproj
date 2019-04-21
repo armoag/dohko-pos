@@ -479,6 +479,10 @@
     <Resource Include="Resources\Images\import.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\shun-pos\Shun.csproj">
+      <Project>{8d4b1d4b-1276-4116-ade0-2363baee5fbd}</Project>
+      <Name>Shun</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zeus-pos\Zeus.csproj">
       <Project>{9521dbf7-db2d-4620-a16e-4e2e2c37fd50}</Project>
       <Name>Zeus</Name>
