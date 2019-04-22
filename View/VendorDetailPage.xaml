@@ -86,7 +86,7 @@
 
                 <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.Name}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.Email}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.Phone}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.Phone}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.Rfc}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
                 <TextBox Grid.Row="5" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.BusinessName}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Text="{Binding VendorTemporalItem.Bank}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>

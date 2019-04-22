@@ -34,7 +34,7 @@
             
         </Grid.RowDefinitions>
         <!-- header -->
-        <Grid Background="#2FC6F8">
+        <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>

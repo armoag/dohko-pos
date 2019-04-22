@@ -49,5 +49,24 @@ namespace Dohko
                 MainWindowViewModel.GetInstance(null, null).Code = "Espacio inválido!";
             }
         }
+
+        private void KeyUpDigitsOnly(object sender, KeyEventArgs e)
+        {
+            ((TextBox)sender).Text = Formatter.RemoveInvalidCharacters(((TextBox)sender).Text, out var status);
+            if (status)
+            {
+                MainWindowViewModel.GetInstance(null, null).Code = "Símbolo inválido!";
+            }
+            ((TextBox)sender).Text = Formatter.RemoveWhiteSpace(((TextBox)sender).Text, out status);
+            if (status)
+            {
+                MainWindowViewModel.GetInstance(null, null).Code = "Espacio inválido!";
+            }
+            ((TextBox)sender).Text = Formatter.LeaveOnlyDigits(((TextBox)sender).Text, out status);
+            if (status)
+            {
+                MainWindowViewModel.GetInstance(null, null).Code = "Letra inválida!";
+            }
+        }
     }
 }
