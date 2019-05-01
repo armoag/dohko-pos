@@ -18,7 +18,7 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
@@ -75,7 +75,7 @@
                 </Grid.RowDefinitions>
                 <Rectangle Grid.Row="0">
                     <Rectangle.Fill>
-                        <SolidColorBrush Color="#FFB4E3FF"></SolidColorBrush>
+                        <SolidColorBrush Color="#FFD86F32"></SolidColorBrush>
                     </Rectangle.Fill>
                 </Rectangle>
                 <TextBlock Grid.Row="0" TextAlignment="Center" Text="PESOS" FontSize="24" FontWeight="Bold" Foreground="#FF383838" VerticalAlignment="Center"/>
@@ -115,7 +115,7 @@
                 </Grid.RowDefinitions>
                 <Rectangle Grid.Row="0" >
                     <Rectangle.Fill>
-                        <SolidColorBrush Color="#FFB4E3FF"></SolidColorBrush>
+                        <SolidColorBrush Color="#FFD86F32"></SolidColorBrush>
                     </Rectangle.Fill>
                 </Rectangle>
                 <TextBlock Grid.Row="0" TextAlignment="Center" FontWeight="Bold" Text="CANTIDAD" FontSize="24" Foreground="#FF383838"/>
@@ -125,7 +125,7 @@
                 <TextBox Grid.Row="4" Text="{Binding MxnPeso100, UpdateSourceTrigger=PropertyChanged}" Background="#FFECECEC" TextChanged="TextBox_TextChanged"></TextBox>
                 <TextBox Grid.Row="5" Text="{Binding MxnPeso50, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <TextBox Grid.Row="6" Text="{Binding MxnPeso20, UpdateSourceTrigger=PropertyChanged}" Background="#FFECECEC"></TextBox>
-                <TextBox Grid.Row="7" Text="{Binding MxnPesoCoinsTotal}" BorderBrush="#FF0073B6" BorderThickness="2px"></TextBox>
+                <TextBox Grid.Row="7" Text="{Binding MxnPesoCoinsTotal}" BorderBrush="#FFD86F32" BorderThickness="2px"></TextBox>
             </Grid>
             <!-- USD panel -->
             <Grid Grid.Column="0" Grid.Row="1" Margin="0,5">
@@ -141,7 +141,7 @@
                 </Grid.RowDefinitions>
                 <Rectangle Grid.Row="0" >
                     <Rectangle.Fill>
-                        <SolidColorBrush Color="#FFB8F0B0"></SolidColorBrush>
+                        <SolidColorBrush Color="#FF69BD5D"></SolidColorBrush>
                     </Rectangle.Fill>
                 </Rectangle>
                 <TextBlock Grid.Row="0" TextAlignment="Center" FontWeight="Bold" Text="DOLAR" FontSize="24" Foreground="#FF383838"/>
@@ -181,7 +181,7 @@
                 </Grid.RowDefinitions>
                 <Rectangle Grid.Row="0" >
                     <Rectangle.Fill>
-                        <SolidColorBrush Color="#FFB8F0B0"></SolidColorBrush>
+                        <SolidColorBrush Color="#FF69BD5D"></SolidColorBrush>
                     </Rectangle.Fill>
                 </Rectangle>
                 <TextBlock Grid.Row="0" TextAlignment="Center" FontWeight="Bold" Text="CANTIDAD" Foreground="#FF383838"/>
@@ -191,7 +191,7 @@
                 <TextBox Grid.Row="4" Text="{Binding UsdDollar10, UpdateSourceTrigger=PropertyChanged}" Background="#FFECECEC"></TextBox>
                 <TextBox Grid.Row="5" Text="{Binding UsdDollar5, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <TextBox Grid.Row="6" Text="{Binding UsdDollar1, UpdateSourceTrigger=PropertyChanged}" Background="#FFECECEC"></TextBox>
-                <TextBox Grid.Row="7" Text="{Binding UsdDollarCoinsTotal}" BorderBrush="#FF1CCD00" BorderThickness="2px"></TextBox>
+                <TextBox Grid.Row="7" Text="{Binding UsdDollarCoinsTotal}" BorderBrush="#FF69BD5D" BorderThickness="2px"></TextBox>
             </Grid>
         </Grid>
 
@@ -293,7 +293,7 @@
                 </Rectangle.Fill>
             </Rectangle>
             <TextBlock Grid.Row="0" TextAlignment="Center" Text="COMENTARIOS" Foreground="#FFF" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Text="{Binding Comments, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent" TextWrapping="Wrap" TextAlignment="Left"></TextBox>
+            <TextBox Grid.Row="1" FontSize="16" Text="{Binding Comments, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent" TextWrapping="Wrap" TextAlignment="Left"></TextBox>
         </Grid>
 
         <!-- Buttons for sales report type -->
@@ -310,7 +310,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\CorteX.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Corte X" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" Text="Corte X" ></TextBlock>
                 </Grid>
             </Button>
 
@@ -321,7 +321,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Cortez.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Corte Z" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" Text="Corte Z" ></TextBlock>
                 </Grid>
             </Button>
 

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Dohko"
       mc:Ignorable="d" 
-      d:DesignHeight="1050" d:DesignWidth="1680"
+      d:DesignHeight="900" d:DesignWidth="1600"
       Title="AnalysisMainPage">
 
     <Page.Resources>
@@ -16,12 +16,13 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Margin" Value="30"></Setter>
         </Style>
             <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="32"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
             <Setter Property="Foreground" Value="#2C5066" />
         </Style>
     </Page.Resources>
@@ -63,7 +64,7 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Image Grid.Row="0" Source="..\Resources\Images\Transacciones.png"></Image>
-                    <TextBlock Grid.Row="1" Text="Transacciones" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+                    <TextBlock Grid.Row="1" Text="Transacciones" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
                 </Grid>
             </Button>
             

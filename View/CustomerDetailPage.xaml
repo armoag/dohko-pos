@@ -17,17 +17,18 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="24"></Setter>            
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
             <Setter Property="Foreground" Value="#2C5066" />
         </Style>
     </Page.Resources>
@@ -72,7 +73,7 @@
                     <RowDefinition Height="5*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" VerticalAlignment="Center" Foreground="Gray" Grid.ColumnSpan="2" Margin="0,4" HorizontalAlignment="Center">Registro de Usuario</TextBlock>
+                <TextBlock Grid.Row="0" VerticalAlignment="Center" Foreground="Gray" Grid.ColumnSpan="2" Margin="0,4" HorizontalAlignment="Center">Registro de Cliente</TextBlock>
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Nombre:"></TextBlock>
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Correo Electrónico"></TextBlock>
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Teléfono:"></TextBlock>
@@ -110,7 +111,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Cancel.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Cancelar" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Cancelar" ></TextBlock>
                 </Grid>
             </Button>
             <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding CustomerSaveChangesCommand}" HorizontalAlignment="Center" MinWidth="200" Margin="5" >
@@ -120,7 +121,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Guardar.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Guardar" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" Text="Guardar" FontSize="18" ></TextBlock>
                 </Grid>
             </Button>
         </Grid>

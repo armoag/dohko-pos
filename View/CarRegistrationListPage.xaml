@@ -49,9 +49,8 @@
             <Setter Property="Background" Value="#F0F0F0" />
             <Setter Property="Foreground" Value="#2C5066" />
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
-            <Setter Property="FontSize" Value="16"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            
         </Style>
     </Page.Resources>
 
@@ -131,14 +130,14 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Margin="10,0" Background="White" BorderBrush="{x:Null}" Command="{Binding ImportExportCarCommand}" CommandParameter="export">                
+            <Button Grid.Column="0" Margin="10,0" Background="White" BorderBrush="{x:Null}" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Command="{Binding ImportExportCarCommand}" CommandParameter="export">                
                  <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                         <Image Source="..\Resources\Images\export.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Foreground="#2C5066" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Exportar" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#2C5066" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Exportar" ></TextBlock>
                  </Grid>                
             </Button>
 
@@ -149,7 +148,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Import.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Foreground="#2C5066" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Importar" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#2C5066" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Importar" ></TextBlock>
                 </Grid>
             </Button>
 
@@ -160,7 +159,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Cancel.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Foreground="#2C5066" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Cancelar" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#2C5066" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Cancelar" ></TextBlock>
                 </Grid>
             </Button>
 
@@ -171,7 +170,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Detalles.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Foreground="#2C5066" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Detalle" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#2C5066" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Detalle" ></TextBlock>
                 </Grid>
             </Button>
 
@@ -182,7 +181,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Guardar.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Foreground="#2C5066" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Registrar" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#2C5066" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Registrar" ></TextBlock>
                 </Grid>
             </Button>
             

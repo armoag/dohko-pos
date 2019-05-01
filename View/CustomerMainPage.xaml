@@ -17,7 +17,7 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="24"></Setter>            
+            <Setter Property="FontSize" Value="18"></Setter>            
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
@@ -27,7 +27,7 @@
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
             <Setter Property="Foreground" Value="#2C5066" />
         </Style>
         
@@ -118,7 +118,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Export.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Exportar" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" Text="Exportar" ></TextBlock>
                 </Grid>
             </Button>
             <Button Grid.Column="2" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding CustomerAddNewItemCommand}" CommandParameter="customer_add" HorizontalAlignment="Center" MinWidth="200" Margin="5">
@@ -128,7 +128,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Agregar.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Nuevo" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" Text="Nuevo" ></TextBlock>
                 </Grid>
             </Button>
             <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding CustomerUpdateCommand}" CommandParameter="customer_details" HorizontalAlignment="Center" MinWidth="200" Margin="5" >
@@ -138,7 +138,7 @@
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Detalles.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="24" Text="Detalle" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" Text="Detalle" ></TextBlock>
                 </Grid>
             </Button>
         </Grid>
