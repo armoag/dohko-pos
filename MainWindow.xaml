@@ -9,7 +9,7 @@
         xmlns:zeus="clr-namespace:Zeus;assembly=Zeus"
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance zeus:MainWindowViewModel}"
-        Title="Wibsar Retail" Height="1050" Width="1680" FontFamily=".\Resources\Fonts\#Comfortaa"
+        Title="Wibsar Retail" Height="900" Width="1600" FontFamily=".\Resources\Fonts\#Comfortaa"
         WindowState="Maximized">
 
     <Window.Resources>
@@ -21,8 +21,9 @@
         <Style TargetType="Button">
             <Setter Property="BorderBrush" Value="{x:Null}"></Setter>
             <Setter Property="FontSize" Value="16"></Setter>
-            <Setter Property="Background" Value="#0F6D8C"></Setter>
-            <Setter Property="Foreground" Value="White"></Setter>           
+            <Setter Property="Background" Value="White"></Setter>
+            <!--Cambio Color-->
+            <Setter Property="Foreground" Value="#2C5066"></Setter>           
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
@@ -53,7 +54,7 @@
     </Window.Resources>
 
     <!-- Main Window Grid -->
-    <Grid ShowGridLines="False" Margin="5" Background="#0F6D8C">
+    <Grid ShowGridLines="False" Margin="5" Background="White"><!--Cambio Color-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -105,7 +106,8 @@
                         <Image Grid.Row="0" Source="Resources\Images\Usuario.png"></Image>
                     </Grid>
                 </Button>
-                <TextBlock Grid.Column="0" Text="{Binding CurrentUser.Name}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24" ></TextBlock>
+                <TextBlock Grid.Column="0" Text="{Binding CurrentUser.Name}" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="24" ></TextBlock>
+                <!--Cambio Color de Gray a White-->
             </Grid>
         </Grid>
         <!-- Grid for checkout section -->
@@ -189,12 +191,12 @@
                         <Button Content ="Limpiar" Command="{Binding ClearCurrentProductListCommand}"></Button>
                     </Grid>
                     <Grid Column="4">
-                        <Button Content ="Inv" Command="{Binding ChangePageCommand}" CommandParameter="remove_inventory" BorderBrush="LightGray"></Button>
+                        <Button Content ="Inv" Command="{Binding ChangePageCommand}" CommandParameter="inventory" BorderBrush="LightGray"></Button>
                     </Grid>
                 </Grid>
                 <!-- Bottom for price display and payment -->
                 <Grid Row="3" ShowGridLines="True">
-                    <Button Command="{Binding ChangePageCommand}" CommandParameter="payment" BorderBrush="{x:Null}"  FontSize="24" Background="Red" Margin="0,0,0,1">
+                    <Button Command="{Binding ChangePageCommand}" CommandParameter="payment" BorderBrush="{x:Null}"  FontSize="24" Background="DodgerBlue" Margin="0,0,0,1">
                         <TextBlock Grid.Column="1" Text="{Binding PaymentTotalMXN, Mode=TwoWay, StringFormat='Pagar: ${0}'}" FontSize="24" VerticalAlignment="Center" Margin="5" Foreground="White" ></TextBlock>                       
                     </Button>
                 </Grid>
@@ -223,7 +225,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea roja.png"></Image>
-                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="General" FontSize="18"/>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="General" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>
@@ -236,7 +238,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea amarilla.png"></Image>
-                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageOneTitle}" FontSize="18"/>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageOneTitle}" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>
@@ -249,7 +251,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea morada.png"></Image>
-                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageTwoTitle}" FontSize="18"/>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageTwoTitle}" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>
@@ -262,7 +264,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea verde.png"></Image>
-                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageThreeTitle}" FontSize="18"/>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageThreeTitle}" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>
@@ -275,7 +277,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea naranja.png"></Image>
-                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageFourTitle}" FontSize="18"/>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageFourTitle}" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>
@@ -288,7 +290,7 @@
                                 <RowDefinition Height="*"></RowDefinition>
                             </Grid.RowDefinitions>
                             <Image Grid.Row="0" Source="Resources\Images\linea azul.png"></Image>
-                            <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageFiveTitle}" FontSize="18"/>
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,0" Text="{Binding PageFiveTitle}" FontSize="18"/>
                         </Grid>
                     </Button>
                 </Grid>

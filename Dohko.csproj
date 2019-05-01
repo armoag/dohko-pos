@@ -491,5 +491,11 @@
   <ItemGroup>
     <Folder Include="ViewModel\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\conteiner_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="conteiner_logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

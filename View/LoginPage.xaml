@@ -50,7 +50,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height=".5*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" Source="..\Resources\Images\Logo Wibsar Retail.png" MaxWidth="500" Margin="50"/>
+        <Image Grid.Row="0" Source="..\Resources\Images\conteiner_logo.png" Margin="50,50,50,0" Stretch="Uniform"/>
         <TextBlock Grid.Row="1" Text="Iniciar Sesión" Foreground="#2C5066" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="26"/>
         <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"
               >
@@ -58,7 +58,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Usuario:" Foreground="#2C5066" FontSize="18" MinWidth="120" TextAlignment="Right"/>
+            <TextBlock Text="Usuario:  " Foreground="#2C5066" FontSize="18" MinWidth="120" TextAlignment="Right"/>
             <TextBox Grid.Column="1" Text="{Binding LoginUserNameText, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsNoSpaceEvent" Margin="10,0,0,0" HorizontalAlignment="Left" Width="200" Height="30"/>
         </Grid>
 
@@ -72,7 +72,6 @@
         </Grid>
         <TextBlock Grid.Row="4" Text="{Binding LoginMessage, Mode=TwoWay}" HorizontalAlignment="Center" Foreground="DarkRed"/>
         <Button Grid.Row="5"  Command="{Binding LoginCheckCommand}" Background="#2C5066"  Foreground="White" Content="Iniciar Sesión" Width="200" Height="40" FontSize="24" BorderBrush="{x:Null}"/>
-
     </Grid>
 
 </Page>
