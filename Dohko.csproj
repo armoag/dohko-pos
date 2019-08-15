@@ -94,6 +94,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\SystemConfiguration.cs" />
     <Compile Include="Model\TypeDefinitions.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="View\AnalysisMainPage.xaml.cs">
