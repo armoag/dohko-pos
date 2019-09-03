@@ -116,7 +116,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="MARCA" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40" ItemsSource="{Binding CarBrandsList, Mode=TwoWay}" SelectedItem="{Binding Car.Make, Mode=TwoWay}"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40" FontSize="18" ItemsSource="{Binding CarBrandsList, Mode=TwoWay}" SelectedItem="{Binding Car.Make, Mode=TwoWay}"></ComboBox>
                     </Grid>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
@@ -174,7 +174,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="TRANSM" VerticalAlignment="Bottom" Margin="10,0" ></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40" ItemsSource="{Binding TransmissionsList, Mode=TwoWay}" SelectedItem="{Binding Car.Transmission, Mode=TwoWay}"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" FontSize="18" MaxHeight="40" ItemsSource="{Binding TransmissionsList, Mode=TwoWay}" SelectedItem="{Binding Car.Transmission, Mode=TwoWay}" Margin="0,18,0,0" VerticalAlignment="Top"></ComboBox>
                     </Grid>
                 </Grid>
                 <TextBlock Grid.Column="0" Grid.Row="4" Text="UBICACION" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10,0"></TextBlock>
@@ -189,7 +189,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="YONKE" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40" ItemsSource="{Binding LocationsList, Mode=TwoWay}" SelectedItem="{Binding Car.Location, Mode=TwoWay}"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" FontSize="18" MaxHeight="40" ItemsSource="{Binding LocationsList, Mode=TwoWay}" SelectedItem="{Binding Car.Location, Mode=TwoWay}"></ComboBox>
                     </Grid>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>

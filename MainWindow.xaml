@@ -13,6 +13,7 @@
         WindowState="Maximized">
 
     <Window.Resources>
+        <zeus:StringFormatConverter x:Key="StringFormatConverter"></zeus:StringFormatConverter>
         <Style TargetType="Page">
             <Setter Property="Foreground" Value="#2C5066" />
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
@@ -68,7 +69,7 @@
         <!-- Grid for header section -->
         <Grid Column="0" Row="0" Grid.ColumnSpan="2" >
             <!-- Client logo -->
-            <Image Source="C:\Projects\seiya-pos\Data\Images\tulogo.png" HorizontalAlignment="Center" MaxWidth="500"  ></Image>
+            <Image Source="Resources/Images\tulogo.png" HorizontalAlignment="Center" MaxWidth="500"  ></Image>
             <Grid ShowGridLines="False">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>                    

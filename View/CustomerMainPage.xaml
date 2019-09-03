@@ -108,7 +108,7 @@
                 <ColumnDefinition Width="*"/>
 
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ChangePageCommand}" CommandParameter="save_customers" HorizontalAlignment="Left" MinWidth="200" Margin="20,5">
+            <Button Grid.Column="0" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ExportDataBaseCommand}" CommandParameter="save_customers" HorizontalAlignment="Left" MinWidth="200" Margin="20,5">
                 <Grid Margin="15">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>

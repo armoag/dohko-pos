@@ -213,7 +213,7 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0" Source="..\Resources\Images\Otros.png"></Image>
-                <TextBlock Grid.Row="1" Text="Otros"></TextBlock>
+                <TextBlock Grid.Row="1" Text="Registrar Carro"></TextBlock>
             </Grid>
         </Button>
     </Grid>

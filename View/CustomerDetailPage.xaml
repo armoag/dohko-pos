@@ -70,6 +70,8 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="5*"></RowDefinition>
                 </Grid.RowDefinitions>
 
@@ -82,7 +84,9 @@
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="Puntos Disponibles:"></TextBlock>
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="Puntos Usados"></TextBlock>
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="Numero de Visitas"></TextBlock>
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="Total Gastado:"></TextBlock>
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="Total Gastado"></TextBlock>
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="Registro"></TextBlock>
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="Ultima Visita"></TextBlock>
 
                 <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding CustomerTemporalItem.Name}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding CustomerTemporalItem.Email}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBox>
@@ -93,6 +97,8 @@
                 <TextBlock Grid.Row="7" Grid.Column="1" Margin="5" Text="{Binding CustomerTemporalItem.PointsUsed}"></TextBlock>
                 <TextBlock Grid.Row="8" Grid.Column="1" Margin="5" Text="{Binding CustomerTemporalItem.TotalVisits}"></TextBlock>
                 <TextBlock Grid.Row="9" Grid.Column="1" Margin="5" Text="{Binding CustomerTemporalItem.TotalSpent, StringFormat='${0}'}"></TextBlock>
+                <TextBlock Grid.Row="10" Grid.Column="1" Margin="5" Text="{Binding CustomerTemporalItem.RegistrationDateString}"></TextBlock>
+                <TextBlock Grid.Row="11" Grid.Column="1" Margin="5" Text="{Binding CustomerTemporalItem.LastVisitDateString}"></TextBlock>
             </Grid>
         </Grid>
         <!-- footer menu -->

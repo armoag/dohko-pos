@@ -12,6 +12,7 @@
       FontFamily="..\Resources\Fonts\#Comfortaa">
 
     <Page.Resources>
+        <Zeus:StringFormatConverter x:Key="StringFormatConverter"></Zeus:StringFormatConverter>
         <Style TargetType="Page">
             <Setter Property="Foreground" Value="#2C5066" />
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
@@ -66,8 +67,8 @@
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="0" Text="Puntos Obtenidos" Foreground="Gray" HorizontalAlignment="Center" ></TextBlock>
             <TextBlock Grid.Column="1" Grid.Row="0" Text="Puntos Disponibles" Foreground="Gray" HorizontalAlignment="Center" ></TextBlock>
-            <TextBlock Grid.Column="0" Grid.Row="1" Margin="5,5,2.5,5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" Text="{Binding PaymentPointsReceived}"></TextBlock>
-            <TextBlock Grid.Column="1" Grid.Row="1" Margin="2.5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" Text="{Binding CurrentCustomer.PointsAvailable}"></TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="1" Margin="5,5,2.5,5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" Text="{Binding PaymentPointsReceived, Converter={StaticResource StringFormatConverter}, StringFormat=N2}"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="1" Margin="2.5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" Text="{Binding CurrentCustomer.PointsAvailable, StringFormat=N2, Converter={StaticResource StringFormatConverter} }"></TextBlock>
         </Grid>
         <!--Separador-->
         <TextBlock Grid.Row="2" Background="#FFECECEC" Height="2" VerticalAlignment="Top"></TextBlock>

@@ -62,8 +62,8 @@
             <Grid Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="49*"></ColumnDefinition>
-                    <ColumnDefinition Width="205*"/>
-                    <ColumnDefinition Width="508*"/>
+                    <ColumnDefinition Width="291*"/>
+                    <ColumnDefinition Width="422*"/>
                     <ColumnDefinition Width="508*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -80,22 +80,22 @@
 
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Text="Registro de Usuario" Margin="48,15,252,15" HorizontalAlignment="Center" Foreground="Gray" Grid.Column="2"/>
-                <TextBlock Grid.Column="0" Grid.Row="1"  Grid.ColumnSpan="3" Text="Nombre" Margin="0,15"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="2"  Grid.ColumnSpan="3" Text="Correo Electrónico" Margin="0,16,0,15"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="3"  Grid.ColumnSpan="3" Text="Teléfono" Margin="0,15"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="4"  Grid.ColumnSpan="3" Text="Nivel de Acceso" Margin="0,16,0,15"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="5"  Grid.ColumnSpan="3" Text="Usuario" Margin="0,15"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="6"  Grid.ColumnSpan="3" Text="Contraseña" Margin="0,16,0,15"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="7"  Grid.ColumnSpan="3" Text="Confirmar Contraseña" Margin="0,15"></TextBlock>
+                <TextBlock Grid.Row="0" Text="Datos de Usuario" HorizontalAlignment="Center" Foreground="Gray" Grid.Column="2" Height="29" Width="180"/>
+                <TextBlock Grid.Column="0" Grid.Row="1"  Grid.ColumnSpan="3" Text="Nombre" Margin="0,15" Height="29"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="2"  Grid.ColumnSpan="3" Text="Correo Electrónico" Margin="0,16,0,15" Height="29"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="3"  Grid.ColumnSpan="3" Text="Teléfono" Margin="0,15" Height="29"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="4"  Grid.ColumnSpan="3" Text="Nivel de Acceso" Margin="0,16,0,15" Height="29"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="5"  Grid.ColumnSpan="3" Text="Usuario" Margin="0,15" Height="29"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="6"  Grid.ColumnSpan="3" Text="Contraseña" Margin="0,16,0,15" Height="29"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="7"  Grid.ColumnSpan="3" Text="Confirmar Contraseña" Margin="0,15" Height="29"></TextBlock>
 
                 <TextBox Grid.Row="1" Grid.Column="2" Margin="5" MaxHeight="45" Text="{Binding UserTemporalItem.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <TextBox Grid.Row="2" Grid.Column="2" Margin="5" MaxHeight="45" Text="{Binding UserTemporalItem.Email, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsNoSpaceEvent" ></TextBox>
                 <TextBox Grid.Row="3" Grid.Column="2" Margin="5" MaxHeight="45" Text="{Binding UserTemporalItem.Phone, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <ComboBox Grid.Row="4" Grid.Column="2" Margin="5" MaxHeight="45" ItemsSource="{Binding UserAccessLevelTypes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem ="{Binding UserTemporalItem.Rights, Mode=TwoWay}" FontSize="20" VerticalContentAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
                 <TextBox Grid.Row="5" Grid.Column="2" Margin="5" MaxHeight="45" Text="{Binding UserTemporalItem.UserName, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsNoSpaceEvent" CharacterCasing="Lower"></TextBox>
-                <PasswordBox Grid.Row="6" Grid.Column="2" x:Name="PasswordBox" PasswordChar="•" Height="44" VerticalContentAlignment="Center" Margin="5,8" PasswordChanged="PasswordBox_OnPasswordChanged"  />
-                <PasswordBox Grid.Row="7" Grid.Column="2" x:Name="PasswordVerificationBox" Height="45" Margin="5,7" PasswordChar="•" VerticalContentAlignment="Center" PasswordChanged="PasswordVerificationBox_OnPasswordChanged"></PasswordBox>
+                <PasswordBox Grid.Row="6" Grid.Column="2" x:Name="PasswordBox" PasswordChar="•" MaxHeight="45" VerticalContentAlignment="Center" Margin="5" PasswordChanged="PasswordBox_OnPasswordChanged"  />
+                <PasswordBox Grid.Row="7" Grid.Column="2" x:Name="PasswordVerificationBox" MaxHeight="45" Margin="5" PasswordChar="•" VerticalContentAlignment="Center" PasswordChanged="PasswordVerificationBox_OnPasswordChanged"></PasswordBox>
             </Grid>
         </Grid>
         <!-- footer menu -->
