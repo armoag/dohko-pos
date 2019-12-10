@@ -69,7 +69,7 @@
         <!-- Grid for header section -->
         <Grid Column="0" Row="0" Grid.ColumnSpan="2" >
             <!-- Client logo -->
-            <Image Source="Resources/Images\tulogo.png" HorizontalAlignment="Center" MaxWidth="500"  ></Image>
+            <Image Source="..\Resources\Images\tulogo.png" HorizontalAlignment="Center" MaxWidth="500"  ></Image>
             <Grid ShowGridLines="False">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>                    
