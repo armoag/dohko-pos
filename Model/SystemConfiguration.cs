@@ -10,9 +10,9 @@ namespace Dohko
     class SystemConfiguration : ISystemConfiguration
     {
         private string _server = "wibsarlicencias.csqn2onotlww.us-east-1.rds.amazonaws.com";
-        private string _dataBaseName = "ConteinerTest";
-        private string _userId = "armoag";
-        private string _password = "Yadira00";
+        private string _dataBaseName = "Conteiner";
+        private string _userId = "conteiner";
+        private string _password = "@Escuinapa1";
         private string _customerTableName = "Clientes";
         private string _inventoryTableName = "Inventario";
         
@@ -58,5 +58,6 @@ namespace Dohko
         public bool CloudCustomers { get; set; } = true;
         public bool LocalInventory { get; set; } = false;
         public bool CloudInventory { get; set; } = true;
+        public bool IndirectPrice { get; set; } = true;
     }
 }

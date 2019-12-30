@@ -162,7 +162,7 @@
                 </Grid>
             </Button>
 
-            <Button Grid.Column="4" Margin="10,0" Background="White" BorderBrush="{x:Null}" Command="{Binding ViewDetailsPartCommand}">
+            <!--<Button Grid.Column="4" Margin="10,0" Background="White" BorderBrush="{x:Null}" Command="{Binding ViewDetailsPartCommand}">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -171,7 +171,7 @@
                     <Image Source="..\Resources\Images\Detalles.png"></Image>
                     <TextBlock VerticalAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#2C5066" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Detalle" ></TextBlock>
                 </Grid>
-            </Button>
+            </Button>-->
 
             <Button Grid.Column="5" Margin="10,0" Background="White" BorderBrush="{x:Null}" Command="{Binding RegisterCarCommand}" CommandParameter="inventory_add">
                 <Grid Margin="5">
