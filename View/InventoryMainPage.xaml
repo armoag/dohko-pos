@@ -16,9 +16,12 @@
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style TargetType="Button">
-            <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="BorderBrush" Value="{x:Null}"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
             <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Margin" Value="10,0"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Width" Value="200"></Setter>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
@@ -110,8 +113,8 @@
                 <ColumnDefinition Width="*"/>
 
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ExportDataBaseCommand}" CommandParameter="save_inventory" HorizontalAlignment="Left" MinWidth="200" Margin="20,5">
-                <Grid Margin="15">
+            <Button Grid.Column="0" Command="{Binding ExportDataBaseCommand}" CommandParameter="save_inventory" HorizontalAlignment="Left" Margin="20,5">
+                <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="3*"></ColumnDefinition>
@@ -120,17 +123,17 @@
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Exportar" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="2" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_add_clone" HorizontalAlignment="Center" MinWidth="200" Margin="5">
+            <Button Grid.Column="2" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_add_clone">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Clonar.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Clonar" ></TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" FontSize="18" Text="Clonar"/>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding InventoryAddItemToCartCommand}" CommandParameter="{Binding SelectedInventoryProduct}" HorizontalAlignment="Center" MinWidth="200" Margin="5">
+            <Button Grid.Column="3" Command="{Binding InventoryAddItemToCartCommand}" CommandParameter="{Binding SelectedInventoryProduct}" HorizontalAlignment="Center">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -140,7 +143,7 @@
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Al Carrito" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="4" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding InventoryAddNewItemCommand}" CommandParameter="inventory_add" HorizontalAlignment="Center" MinWidth="200" Margin="5">
+            <Button Grid.Column="4" Command="{Binding InventoryAddNewItemCommand}" CommandParameter="inventory_add">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -150,7 +153,7 @@
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Nuevo" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="5" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_details" HorizontalAlignment="Center" MinWidth="200" Margin="5" >
+            <Button Grid.Column="5" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_details">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>

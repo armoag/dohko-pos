@@ -17,9 +17,13 @@
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style TargetType="Button">
-            <Setter Property="BorderBrush" Value="White"></Setter>
-            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="BorderBrush" Value="{x:Null}"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
             <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Margin" Value="10,0"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Width" Value="200"></Setter>
+            <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
@@ -102,7 +106,7 @@
                 <ColumnDefinition Width="*"/>
 
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding ChangePageCommand}" CommandParameter="vendors" HorizontalAlignment="Center" Width="200" Margin="5">
+            <Button Grid.Column="1" Command="{Binding ChangePageCommand}" CommandParameter="vendors">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -112,7 +116,7 @@
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Cancelar" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="2" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding VendorDeleteCommand}" HorizontalAlignment="Center" Width="200" Margin="5">
+            <Button Grid.Column="2" Command="{Binding VendorDeleteCommand}">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -122,7 +126,7 @@
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Eliminar" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Background="#FFF3F3F3" BorderBrush="LightGray" Command="{Binding VendorSaveChangesCommand}"  Width="200" Margin="5" >
+            <Button Grid.Column="3" Command="{Binding VendorSaveChangesCommand}">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
