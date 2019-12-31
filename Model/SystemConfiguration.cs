@@ -10,11 +10,12 @@ namespace Dohko
     class SystemConfiguration : ISystemConfiguration
     {
         private string _server = "wibsarlicencias.csqn2onotlww.us-east-1.rds.amazonaws.com";
-        private string _dataBaseName = "Conteiner";
+        private string _dataBaseName = "ConteinerTest";
         private string _userId = "conteiner";
         private string _password = "@Escuinapa1";
         private string _customerTableName = "Clientes";
         private string _inventoryTableName = "Inventario";
+        private string _queueTableName = "Queue";
         
         public string Server
         {
@@ -52,6 +53,12 @@ namespace Dohko
             set { _inventoryTableName = value; }
         }
 
+        public string QueueTableName
+        {
+            get { return _queueTableName; }
+            set { _queueTableName = value; }
+        }
+
         public bool EmailTransactionsFileAfterEndSalesReport { get; set; } = true;
         public bool IntFlag { get; set; } = false;
         public bool LocalCustomers { get; set; } = false;
@@ -59,5 +66,6 @@ namespace Dohko
         public bool LocalInventory { get; set; } = false;
         public bool CloudInventory { get; set; } = true;
         public bool IndirectPrice { get; set; } = true;
+        public SystemTypeEnum SystemType { get; set; }
     }
 }
