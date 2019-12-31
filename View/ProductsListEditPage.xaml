@@ -168,7 +168,7 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\flecha arriba.png" VerticalAlignment="Center" MinWidth="100"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\flecha arriba.png" VerticalAlignment="Center" MinWidth="100" Margin="10"></Image>
                             <TextBlock Grid.Column="1" Text="Subir" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="100"  Foreground="Gray"></TextBlock>
                         </Grid>
                     </Button>
@@ -178,7 +178,7 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\flecha abajo.png" MinWidth="100"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\flecha abajo.png" MinWidth="100" Margin="10"></Image>
                             <TextBlock Grid.Column="1" Text="Bajar"  VerticalAlignment="Center" MinWidth="100" Foreground="Gray"></TextBlock>
                         </Grid>
                     </Button>
@@ -194,7 +194,7 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\delete.png" MinWidth="100"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\delete.png" MinWidth="100" Margin="10"></Image>
                             <TextBlock Grid.Column="1" Text="Eliminar" VerticalAlignment="Center" MinWidth="100"  Foreground="Gray"></TextBlock>
                         </Grid>
                     </Button>
@@ -204,7 +204,7 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\Guardar.png" MinWidth="100"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\Guardar.png" MinWidth="100" Margin="10"></Image>
                             <TextBlock Grid.Column="1" Text="Guardar" VerticalAlignment="Center" Foreground="Gray" MinWidth="100"></TextBlock>
                         </Grid>
                     </Button>

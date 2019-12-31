@@ -77,6 +77,7 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="5*"></RowDefinition>
                 </Grid.RowDefinitions>
 
@@ -91,8 +92,9 @@
                 <TextBlock Grid.Column="0" Grid.Row="8" Text="Fecha de Venta:"></TextBlock>
                 <TextBlock Grid.Column="0" Grid.Row="9" Text="Cliente:"></TextBlock>
                 <TextBlock Grid.Column="0" Grid.Row="10" Text="Usuario:"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="11" Text="Tipo Venta:"></TextBlock>
-                <TextBlock Grid.Column="0" Grid.Row="12" Text="Método de Pago:"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="11" Text="Vendedor:"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="12" Text="Tipo Venta:"></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="13" Text="Método de Pago:"></TextBlock>
 
                 <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding TransactionTemporalItem.ReceiptNumber}" KeyUp="KeyUpNoSymbolsEvent"></TextBlock>
                 <TextBlock Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding TransactionTemporalItem.ProductCode}" KeyUp="KeyUpNoSymbolsNoSpaceEvent"></TextBlock>
@@ -104,8 +106,9 @@
                 <TextBlock Grid.Row="8" Grid.Column="1" Margin="5" Text="{Binding TransactionTemporalItem.TransactionDate}"></TextBlock>
                 <TextBlock Grid.Row="9" Grid.Column="1" Margin="5" Text="{Binding TransactionTemporalItem.CustomerName}"></TextBlock>
                 <TextBlock Grid.Row="10" Grid.Column="1" Margin="5" Text="{Binding TransactionTemporalItem.UserName}"></TextBlock>
-                <TextBlock Grid.Row="11" Grid.Column="1" Margin="5" Text="{Binding TransactionTemporalItem.SaleType}"></TextBlock>
-                <TextBlock Grid.Row="12" Grid.Column="1" Margin="5" Text="{Binding TransactionTemporalItem.PaymentType}"></TextBlock>
+                <TextBlock Grid.Row="11" Grid.Column="1" Margin="5" Text="{Binding TransactionTemporalItem.SellerName}"></TextBlock>
+                <TextBlock Grid.Row="12" Grid.Column="1" Margin="5" Text="{Binding TransactionTemporalItem.SaleType}"></TextBlock>
+                <TextBlock Grid.Row="13" Grid.Column="1" Margin="5" Text="{Binding TransactionTemporalItem.PaymentType}"></TextBlock>
             </Grid>
         </Grid>
         <!-- footer menu -->

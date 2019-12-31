@@ -106,6 +106,7 @@
                 <DataGridTextColumn Binding="{Binding ProductCategory}" ClipboardContentBinding="{x:Null}" Header=" Categoría " IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding ProductDescription}" ClipboardContentBinding="{x:Null}" Header=" Descripción " IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding CustomerName}" ClipboardContentBinding="{x:Null}" Header=" Cliente " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding SellerName}" ClipboardContentBinding="{x:Null}" Header=" Vendedor " IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding UserName}" ClipboardContentBinding="{x:Null}" Header=" Usuario " IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>

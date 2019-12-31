@@ -118,7 +118,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="MARCA" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40" FontSize="18" ItemsSource="{Binding CarBrandsList, Mode=TwoWay}" SelectedItem="{Binding Car.Make, Mode=TwoWay}"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40" FontSize="18" Margin="0,0,10,0" ItemsSource="{Binding CarBrandsList, Mode=TwoWay}" SelectedItem="{Binding Car.Make, Mode=TwoWay}"></ComboBox>
                     </Grid>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
@@ -144,7 +144,7 @@
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
-                        <TextBlock Text="MODELO / VERSION" VerticalAlignment="Bottom" Margin="10,0,10,61" Grid.ColumnSpan="2" Grid.RowSpan="2"></TextBlock>
+                        <TextBlock Grid.Row ="0" Text="MODELO / VERSION" VerticalAlignment="Bottom" Margin="10,0" Grid.ColumnSpan="2"></TextBlock>
                         <TextBox Grid.Column="0" Grid.Row="1" MinWidth="20" Margin="0,0,10,0" MaxHeight="40" Grid.ColumnSpan="2" Text ="{Binding Car.Model, Mode=TwoWay}" KeyUp="KeyUpNoSymbolsEvent" ></TextBox>
                     </Grid>
                     <Grid Grid.Column="1">
@@ -176,7 +176,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="TRANSM" VerticalAlignment="Bottom" Margin="10,0" ></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" FontSize="18" MaxHeight="40" ItemsSource="{Binding TransmissionsList, Mode=TwoWay}" SelectedItem="{Binding Car.Transmission, Mode=TwoWay}" Margin="0,18,0,0" VerticalAlignment="Top"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" FontSize="18" MaxHeight="40" Margin="0,0,10,0" ItemsSource="{Binding TransmissionsList, Mode=TwoWay}" SelectedItem="{Binding Car.Transmission, Mode=TwoWay}" VerticalAlignment="Center"></ComboBox>
                     </Grid>
                 </Grid>
                 <TextBlock Grid.Column="0" Grid.Row="4" Text="UBICACION" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10,0"></TextBlock>
@@ -191,7 +191,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="YONKE" VerticalAlignment="Bottom" Margin="10,0"></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" FontSize="18" MaxHeight="40" ItemsSource="{Binding LocationsList, Mode=TwoWay}" SelectedItem="{Binding Car.Location, Mode=TwoWay}"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" FontSize="18" MaxHeight="40" Margin="0,0,10,0" ItemsSource="{Binding LocationsList, Mode=TwoWay}" SelectedItem="{Binding Car.Location, Mode=TwoWay}"></ComboBox>
                     </Grid>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
@@ -222,7 +222,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="MONEDA" VerticalAlignment="Bottom" Margin="10,0" ></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40" ItemsSource="{Binding CurrencyTypes, Mode=TwoWay}" SelectedItem="{Binding Car.CostCurrency, Mode=TwoWay}" FontSize="18" VerticalContentAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40" Margin="0,0,10,0" ItemsSource="{Binding CurrencyTypes, Mode=TwoWay}" SelectedItem="{Binding Car.CostCurrency, Mode=TwoWay}" FontSize="18" VerticalContentAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="1" Grid.Row="1" Margin="10,0">
@@ -245,7 +245,7 @@
                             <RowDefinition Height="1.5*"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock Text="MONEDA" VerticalAlignment="Bottom" Margin="10,0" ></TextBlock>
-                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40" ItemsSource="{Binding CurrencyTypes, Mode=TwoWay}" SelectedItem="{Binding Car.ImportCostCurrency, Mode=TwoWay}" FontSize="18" VerticalContentAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
+                        <ComboBox Grid.Row="1" MinWidth="20" MaxHeight="40" Margin="0,0,10,0" ItemsSource="{Binding CurrencyTypes, Mode=TwoWay}" SelectedItem="{Binding Car.ImportCostCurrency, Mode=TwoWay}" FontSize="18" VerticalContentAlignment="Center" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" Foreground="#FF224458"></ComboBox>
                     </Grid>
                 </Grid>
                 <Grid Grid.Column="1" Grid.Row="2" Margin="10,0">

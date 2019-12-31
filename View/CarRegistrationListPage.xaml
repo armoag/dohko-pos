@@ -89,6 +89,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Command="{Binding SearchListCommand}" CommandParameter="a" Height="60"  Background="White"  BorderBrush="#0C3847">
                 <TextBlock TextWrapping="wrap" Foreground="#2C5066" FontSize="18">CARROCERIA</TextBlock>
@@ -103,7 +104,8 @@
             <Button Grid.Column="4" Content="EXTERIOR" Command="{Binding SearchListCommand}" CommandParameter="e" Height="60" Foreground="#2C5066" Background="White" FontSize="18" BorderBrush="#0C3847"></Button>
             <Button Grid.Column="5" Content="MOTOR" Command="{Binding SearchListCommand}" CommandParameter="f" Height="60" Foreground="#2C5066" Background="White" FontSize="18" BorderBrush="#0C3847"></Button>
             <Button Grid.Column="6" Content="TRANSMISION" Command="{Binding SearchListCommand}" CommandParameter="g" Height="60" Foreground="#2C5066" Background="White" FontSize="18" BorderBrush="#0C3847"></Button>
-            <Button Grid.Column="7" Content="OTROS" Command="{Binding SearchListCommand}" CommandParameter="h" Height="60" Foreground="#2C5066" Background="White" FontSize="18" BorderBrush="#0C3847"></Button>
+            <Button Grid.Column="7" Content="CAJUELA" Command="{Binding SearchListCommand}" CommandParameter="h" Height="60" Foreground="#2C5066" Background="White" FontSize="18" BorderBrush="#0C3847"></Button>
+            <Button Grid.Column="8" Content="OTROS" Command="{Binding SearchListCommand}" CommandParameter="i" Height="60" Foreground="#2C5066" Background="White" FontSize="18" BorderBrush="#0C3847"></Button>
         </Grid>
         <Grid Row="2" Background="#0C3847">            
             <DataGrid x:Name="CarAccessoriesData" Margin="0,6,0,0" HeadersVisibility="Column" ItemsSource="{Binding CarPartsSearchedEntries}" SelectedItem="{Binding SelectedCarPart, Mode =TwoWay}" CanUserSortColumns="False" CanUserReorderColumns="False" AutoGenerateColumns="False" BorderBrush="{x:Null}" SelectionMode="Single">

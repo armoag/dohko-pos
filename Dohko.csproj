@@ -127,6 +127,9 @@
     <Compile Include="View\CarRegistrationMainPage.xaml.cs">
       <DependentUpon>CarRegistrationMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\QueueMainPage.xaml.cs">
+      <DependentUpon>QueueMainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PaymentPartialPage.xaml.cs">
       <DependentUpon>PaymentPartialPage.xaml</DependentUpon>
     </Compile>
@@ -238,6 +241,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\CarRegistrationMainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\QueueMainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

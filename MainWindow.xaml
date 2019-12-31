@@ -178,6 +178,7 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
                     <Grid Column="0">
@@ -190,10 +191,13 @@
                         <Button Content ="%" FontSize="20" Command="{Binding ApplyDiscountToProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem}" BorderBrush="LightGray" ></Button>
                     </Grid>
                     <Grid Column="3">
-                        <Button Content ="Limpiar" Command="{Binding ClearCurrentProductListCommand}"></Button>
+                        <Button Content ="C" Command="{Binding ClearCurrentProductListCommand}"></Button>
                     </Grid>
                     <Grid Column="4">
                         <Button Content ="Inv" Command="{Binding ChangePageCommand}" CommandParameter="inventory" BorderBrush="LightGray"></Button>
+                    </Grid>
+                    <Grid Column="5">
+                        <Button Content ="Ord" Command="{Binding ChangePageCommand}" CommandParameter="queue" BorderBrush="LightGray"></Button>
                     </Grid>
                 </Grid>
                 <!-- Bottom for price display and payment -->
@@ -315,7 +319,7 @@
                         <KeyBinding Command="{Binding SearchCodeCommand}" Key="Enter" CommandParameter="{Binding Code}"></KeyBinding>
                     </TextBox.InputBindings>
                 </TextBox>
-                <Button Command="{Binding SearchCodeCommand}" CommandParameter="{Binding Code}" Grid.Column="1" >
+                <Button Command="{Binding SearchCodeCommand}" CommandParameter="{Binding Code}" Grid.Column="1" Height="51" VerticalAlignment="Bottom" >
                     <Image Source="Resources\Images\lupa activa.png" Margin="5"></Image>
                 </Button>
             </Grid>

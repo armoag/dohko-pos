@@ -1,4 +1,4 @@
-﻿<Page x:Class="Dohko.InventoryMainPage"
+﻿<Page x:Class="Dohko.QueueMainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -83,23 +83,25 @@
                 <ColumnDefinition Width="6*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="INVENTARIO" Margin="20,0"></TextBlock>
-            <TextBox Grid.Column="1" x:Name="InventorySearchTextBox" Height="40" Text="{Binding InventorySearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center"/>
-            <Button Grid.Column="2" Command="{Binding InventoryStartSearchCommand}" CommandParameter="{Binding InventorySearchText}">
+            <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="ORDENES PENDIENTES" Margin="20,0"></TextBlock>
+            <TextBox Grid.Column="1" x:Name="InventorySearchTextBox" Height="40" Text="{Binding QueueSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center"/>
+            <Button Grid.Column="2" Command="{Binding QueueStartSearchCommand}" CommandParameter="{Binding QueueSearchText}">
                 <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image>
             </Button>
         </Grid>
 
         <!-- Table of inventory items found based on the search -->
-        <DataGrid x:Name="Data" Grid.Row="1" Margin="0,6,0,0" HeadersVisibility="Column" ItemsSource="{Binding InventorySearchedProducts}" SelectedItem="{Binding SelectedInventoryProduct, Mode =TwoWay}" CanUserSortColumns="False" CanUserReorderColumns="False" AutoGenerateColumns="False" BorderBrush="{x:Null}" SelectionMode="Single" >
+        <DataGrid x:Name="Data" Grid.Row="1" Margin="0,6,0,0" HeadersVisibility="Column" ItemsSource="{Binding QueueSearchedProducts}" SelectedItem="{Binding SelectedQueueProduct, Mode =TwoWay}" CanUserSortColumns="False" CanUserReorderColumns="False" AutoGenerateColumns="False" BorderBrush="{x:Null}" SelectionMode="Single" >
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Code}" ClipboardContentBinding="{x:Null}" Header=" Codigo " IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Description}" ClipboardContentBinding="{x:Null}" Header=" Descripcion " IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Category}" ClipboardContentBinding="{x:Null}" Header=" Categoria " IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Price, StringFormat='${0}'}" ClipboardContentBinding="{x:Null}" Header=" Precio " IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding PriceCurrency}" ClipboardContentBinding="{x:Null}" Header=" Moneda " IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding LocalQuantityAvailable}" ClipboardContentBinding="{x:Null}" Header=" Existencia " IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding TotalQuantityAvailable}" ClipboardContentBinding="{x:Null}" Header=" Existencia Total " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding OrderNumber}" ClipboardContentBinding="{x:Null}" Header=" Orden " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding ProductCode}" ClipboardContentBinding="{x:Null}" Header=" Codigo " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding ProductCategory}" ClipboardContentBinding="{x:Null}" Header=" Categoria " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding ProductDescription}" ClipboardContentBinding="{x:Null}" Header=" Descripcion " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding PriceSold, StringFormat='${0}'}" ClipboardContentBinding="{x:Null}" Header=" Precio " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding UnitsSold}" ClipboardContentBinding="{x:Null}" Header=" Unidades " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Date}" ClipboardContentBinding="{x:Null}" Header=" Fecha " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Customer}" ClipboardContentBinding="{x:Null}" Header=" Cliente " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Seller}" ClipboardContentBinding="{x:Null}" Header=" Vendedor " IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <!-- footer menu -->
@@ -110,30 +112,18 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Command="{Binding ExportDataBaseCommand}" CommandParameter="save_inventory" HorizontalAlignment="Left">
+            <Button Grid.Column="0" Command="{Binding QueueDeleteCommand}" CommandParameter="{Binding SelectedInventoryProduct}" HorizontalAlignment="Left">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image Source="..\Resources\Images\Export.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Exportar" ></TextBlock>
+                    <Image Source="..\Resources\Images\Delete.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Eliminar" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="2" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_add_clone">
-                <Grid Margin="5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="3*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="..\Resources\Images\Clonar.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" FontSize="18" Text="Clonar"/>
-                </Grid>
-            </Button>
-            <Button Grid.Column="3" Command="{Binding InventoryAddItemToCartCommand}" CommandParameter="{Binding SelectedInventoryProduct}" HorizontalAlignment="Center">
+            <Button Grid.Column="4" Command="{Binding QueueAddItemToCartCommand}" CommandParameter="{Binding SelectedQueueProduct}" HorizontalAlignment="Center">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -141,26 +131,6 @@
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\add cart.png"></Image>
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Al Carrito" ></TextBlock>
-                </Grid>
-            </Button>
-            <Button Grid.Column="4" Command="{Binding InventoryAddNewItemCommand}" CommandParameter="inventory_add">
-                <Grid Margin="5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="3*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="..\Resources\Images\Agregar.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Nuevo" ></TextBlock>
-                </Grid>
-            </Button>
-            <Button Grid.Column="5" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_details">
-                <Grid Margin="5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="3*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="..\Resources\Images\Detalles.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Detalles" ></TextBlock>
                 </Grid>
             </Button>
         </Grid>
