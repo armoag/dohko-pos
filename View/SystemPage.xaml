@@ -99,7 +99,7 @@
                             <TextBlock Grid.Row="10" Grid.Column="0" Text="Instagram"></TextBlock>
                             <TextBlock Grid.Row="11" Grid.Column="0" Text="Página de Internet"></TextBlock>
                             <TextBlock Grid.Row="12" Grid.Column="0" Text="Comentarios"></TextBlock>
-                            <TextBlock Grid.Row="13" Grid.Column="0" Text="Mensaje Pie de Ticket"></TextBlock>
+                            <!--<TextBlock Grid.Row="13" Grid.Column="0" Text="Mensaje Pie de Ticket"></TextBlock>-->
 
                             <!-- Users input -->
                             <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Printers, Mode=TwoWay}" SelectedItem="{Binding PrinterName, Mode=TwoWay}" Margin="0,0,5,0" MinHeight="40" VerticalContentAlignment="Center"></ComboBox>
@@ -115,7 +115,7 @@
                             <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Instagram, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent" Margin="0,5,5,0"></TextBox>
                             <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Website, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsNoSpaceEvent" Margin="0,5,5,0"></TextBox>
                             <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Comments, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent" Margin="0,5,5,0"></TextBox>
-                            <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding FooterMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent" Margin="0,5,5,0"></TextBox>
+                            <!--<TextBox Grid.Row="13" Grid.Column="1" Text="{Binding FooterMessage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent" Margin="0,5,5,0"></TextBox>-->
                             <!--<DocumentViewer Document="{Binding Document, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="2" Grid.RowSpan="13"></DocumentViewer>-->
                         </Grid>
                     </Grid>
