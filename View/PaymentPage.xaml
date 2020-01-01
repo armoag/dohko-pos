@@ -66,7 +66,11 @@
             <TextBlock Grid.Column="1" Text="{Binding CurrentCustomer.Phone}" HorizontalAlignment="Center" Foreground="Gray"></TextBlock>
             <TextBlock Grid.Column="2" Text="Puntos:" Foreground="Green" HorizontalAlignment="Right" VerticalAlignment="Center"></TextBlock>
             <TextBlock Grid.Column="3" Text="{Binding CurrentCustomer.PointsAvailable}" Foreground="Green" VerticalAlignment="Center" Margin="5,0,0,0"></TextBlock>
-            <TextBox Grid.Column="4" ToolTip="Numero de Cliente" Text="{Binding PaymentCustomerSearchInput}" KeyUp="KeyUpNoSymbolsEvent" Margin="0,5,0,5"></TextBox>
+            <TextBox Grid.Column="4" ToolTip="Numero de Cliente" Text="{Binding PaymentCustomerSearchInput}" KeyUp="KeyUpNoSymbolsEvent" Margin="0,5,0,5">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding PaymentCustomerSearchCommand}" Key="Enter"></KeyBinding>
+                </TextBox.InputBindings>
+            </TextBox>
             <Button Grid.Column="5" Command="{Binding PaymentCustomerSearchCommand}" BorderBrush="{x:Null}">
                 <Image Source="..\Resources\Images\lupa activa.png" ></Image>
             </Button>

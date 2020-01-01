@@ -68,7 +68,11 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Contraseña:" VerticalAlignment="Center" MinWidth="120" FontSize="18" TextAlignment="Right"/>
-            <PasswordBox Grid.Column="1" x:Name="LoginPasswordBox" PasswordChar="•" VerticalContentAlignment="Center" PasswordChanged="LoginPasswordBox_OnPasswordChanged" HorizontalAlignment="Left" Width="200" Height="30" Margin="10,0,0,0"></PasswordBox>
+            <PasswordBox Grid.Column="1" x:Name="LoginPasswordBox" PasswordChar="•" VerticalContentAlignment="Center" PasswordChanged="LoginPasswordBox_OnPasswordChanged" HorizontalAlignment="Left" Width="200" Height="30" Margin="10,0,0,0">
+                <PasswordBox.InputBindings>
+                    <KeyBinding Command="{Binding LoginCheckCommand}" Key="Enter"></KeyBinding>
+                </PasswordBox.InputBindings>
+            </PasswordBox>
         </Grid>
         <TextBlock Grid.Row="4" Text="{Binding LoginMessage, Mode=TwoWay}" HorizontalAlignment="Center" Foreground="DarkRed"/>
         <Button Grid.Row="5"  Command="{Binding LoginCheckCommand}" Background="#2C5066"  Foreground="White" Content="Iniciar Sesión" Width="200" Height="40" FontSize="24" BorderBrush="{x:Null}"/>

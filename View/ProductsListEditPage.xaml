@@ -285,7 +285,11 @@
                         <Button Grid.Column="1" Command="{Binding AddListItemCommand}" CommandParameter="{Binding ElementName=AddToListTxtBox}" Margin="10">
                             <Image Source="..\Resources\Images\agregar.png"></Image>
                         </Button>
-                        <TextBox Grid.Column="0" x:Name="AddToListTxtBox" KeyUp="KeyUpNoSymbolsEvent" Height="30" Margin="5"/>
+                        <TextBox Grid.Column="0" x:Name="AddToListTxtBox" KeyUp="KeyUpNoSymbolsEvent" Height="30" Margin="5">
+                            <TextBox.InputBindings>
+                                <KeyBinding Command="{Binding AddListItemCommand}" CommandParameter="{Binding ElementName=AddToListTxtBox}"></KeyBinding>
+                            </TextBox.InputBindings>
+                        </TextBox>
                     </Grid>
                 </Grid>
             </Grid>

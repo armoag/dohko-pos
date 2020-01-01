@@ -85,7 +85,12 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock Text="CLIENTES" FontSize="24" VerticalAlignment="Center" Margin="20,0"></TextBlock>
-            <TextBox Grid.Column="1" Height="40" x:Name="CustomersSearchTextBox" Text="{Binding CustomersSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" FontSize="18" Padding="6,0" VerticalContentAlignment="Center"/>
+            <TextBox Grid.Column="1" Height="40" x:Name="CustomersSearchTextBox" Text="{Binding CustomersSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     AcceptsReturn="False" AcceptsTab="False" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" FontSize="18" Padding="6,0" VerticalContentAlignment="Center">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding CustomerStartSearchCommand}" CommandParameter="{Binding CustomersSearchText}" Key="Enter"></KeyBinding>
+                </TextBox.InputBindings>
+            </TextBox>
             <Button Grid.Column="2" Background="White" Command="{Binding CustomerStartSearchCommand}" CommandParameter="{Binding CustomersSearchText}">
                 <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image>
             </Button>

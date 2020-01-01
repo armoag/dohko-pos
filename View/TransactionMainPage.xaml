@@ -86,7 +86,12 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="TRANSACCIONES" Margin="20,0" FontSize="24" VerticalAlignment="Center"></TextBlock>
             <Button Grid.Column="1" x:Name="TransactionsTypeToggle" Foreground="{Binding CodeColor, UpdateSourceTrigger=PropertyChanged}" Command="{Binding ChangeTransactionFileTypeCommand, UpdateSourceTrigger=PropertyChanged}" CommandParameter="{Binding ElementName=TransactionsTypeToggle}" FontSize="18" Width="Auto" Margin="5,0,5,0"  BorderBrush="{x:Null}" Background="LightGray" Content="{Binding TransactionFileTypeContent}" HorizontalAlignment = "Stretch"  />
-            <TextBox Grid.Column="2" Height="40" x:Name="TransactionsSearchTextBox" Text="{Binding TransactionsSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" FontSize="18" Padding="6,0" VerticalContentAlignment="Center"/>
+            <TextBox Grid.Column="2" Height="40" x:Name="TransactionsSearchTextBox" Text="{Binding TransactionsSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     AcceptsReturn="False" AcceptsTab="False" FontFamily="/Dohko;component/Resources/Fonts/#Comfortaa" FontSize="18" Padding="6,0" VerticalContentAlignment="Center">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding TransactionStartSearchCommand}" CommandParameter="x" Key="Enter"></KeyBinding>
+                </TextBox.InputBindings>
+            </TextBox>
             <Button Grid.Column="3" Background="White" Command="{Binding TransactionStartSearchCommand}" CommandParameter="x">
                 <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image>
             </Button>

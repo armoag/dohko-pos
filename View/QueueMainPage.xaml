@@ -84,7 +84,12 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="ORDENES PENDIENTES" Margin="20,0"></TextBlock>
-            <TextBox Grid.Column="1" x:Name="InventorySearchTextBox" Height="40" Text="{Binding QueueSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center"/>
+            <TextBox Grid.Column="1" x:Name="InventorySearchTextBox" Height="40" Text="{Binding QueueSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding QueueStartSearchCommand}" CommandParameter="{Binding QueueSearchText}" Key="Enter"></KeyBinding>
+                </TextBox.InputBindings>
+            </TextBox>
             <Button Grid.Column="2" Command="{Binding QueueStartSearchCommand}" CommandParameter="{Binding QueueSearchText}">
                 <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image>
             </Button>
@@ -97,7 +102,7 @@
                 <DataGridTextColumn Binding="{Binding ProductCode}" ClipboardContentBinding="{x:Null}" Header=" Codigo " IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding ProductCategory}" ClipboardContentBinding="{x:Null}" Header=" Categoria " IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding ProductDescription}" ClipboardContentBinding="{x:Null}" Header=" Descripcion " IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding PriceSold, StringFormat='${0}'}" ClipboardContentBinding="{x:Null}" Header=" Precio " IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding PriceSold, StringFormat='${0}'}" ClipboardContentBinding="{x:Null}" Header=" Precio (MXN) " IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding UnitsSold}" ClipboardContentBinding="{x:Null}" Header=" Unidades " IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Date}" ClipboardContentBinding="{x:Null}" Header=" Fecha " IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Customer}" ClipboardContentBinding="{x:Null}" Header=" Cliente " IsReadOnly="True"/>

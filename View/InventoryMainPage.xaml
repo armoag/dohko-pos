@@ -84,7 +84,11 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="INVENTARIO" Margin="20,0"></TextBlock>
-            <TextBox Grid.Column="1" x:Name="InventorySearchTextBox" Height="40" Text="{Binding InventorySearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center"/>
+            <TextBox Grid.Column="1" x:Name="InventorySearchTextBox" Height="40" Text="{Binding InventorySearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding InventoryStartSearchCommand}" CommandParameter="{Binding InventorySearchText}" Key="Enter"></KeyBinding>
+                </TextBox.InputBindings>
+            </TextBox>
             <Button Grid.Column="2" Command="{Binding InventoryStartSearchCommand}" CommandParameter="{Binding InventorySearchText}">
                 <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image>
             </Button>

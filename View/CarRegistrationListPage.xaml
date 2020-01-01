@@ -74,7 +74,11 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBlock FontSize="24" Margin="20,0" Foreground="#2C5066" HorizontalAlignment="Left" VerticalAlignment="Center" Text="REGISTRO DE CARRO"></TextBlock>
-            <TextBox Grid.Column="1" Margin="5" Background="White" x:Name="CarPartSearchTextBox" Text="{Binding PartsSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center"/>
+            <TextBox Grid.Column="1" Margin="5" Background="White" x:Name="CarPartSearchTextBox" Text="{Binding PartsSearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="False" AcceptsTab="False" VerticalContentAlignment="Center">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding SearchListCommand}" CommandParameter="freesearch" Key="Enter"></KeyBinding>
+                </TextBox.InputBindings>
+            </TextBox>
             <Button Grid.Column="2" Margin="5" Command="{Binding SearchListCommand}" CommandParameter="freesearch" Background="#F0F0F0">
                 <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image> 
             </Button>

@@ -115,7 +115,5 @@
             </Grid>
         </Grid>
         <Button Grid.Row="4" x:Name="EndTransactionBtn" FontSize="24" FontWeight="Bold" Foreground="DarkGreen" Background="#FF8BD48B" Content="TERMINAR" Command="{Binding ChangePageCommand}" CommandParameter="end_transaction" BorderBrush="{x:Null}"></Button>
-        
-        
     </Grid>
 </Page>
