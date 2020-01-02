@@ -49,7 +49,7 @@
         </Grid.RowDefinitions>
 
         <!-- header -->
-        <TextBlock Grid.Row="0" Text="GASTOS" FontSize="24" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Grid.Row="0" Text="GASTOS" FontSize="24" VerticalAlignment="Center" Margin="20,0"></TextBlock>
 
 
         <Grid Grid.Row="1" Margin="5">

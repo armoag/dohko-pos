@@ -13,7 +13,7 @@
     <Page.Resources>
         <Style TargetType="Page">
             <Setter Property="Foreground" Value="#2C5066" />
-            <Setter Property="FontFamily" Value="C:\Projects\wibsar-pos-solution\seiya-pos\Resources\Fonts\Comfortaa-Regular.ttf"></Setter>
+            <Setter Property="FontFamily" Value="C:\Projects\wibsar-pos-solution\dohko-pos\Resources\Fonts\Comfortaa-Regular.ttf"></Setter>
             <Setter Property="Background" Value="White"></Setter>
         </Style>
         <Style TargetType="Button">

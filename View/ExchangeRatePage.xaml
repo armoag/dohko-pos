@@ -57,7 +57,7 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Padding="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Gray" Text="Agregar Nuevo Tipo de Cambio" ></TextBlock>
+            <TextBlock Grid.Row="0" Padding="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="Gray" Text="Modificar Tipo de Cambio" ></TextBlock>
             <Grid Grid.Row="1" Background="White">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
