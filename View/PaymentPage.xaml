@@ -71,7 +71,7 @@
                     <KeyBinding Command="{Binding PaymentCustomerSearchCommand}" Key="Enter"></KeyBinding>
                 </TextBox.InputBindings>
             </TextBox>
-            <Button Grid.Column="5" Command="{Binding PaymentCustomerSearchCommand}" BorderBrush="{x:Null}">
+            <Button Grid.Column="5" Command="{Binding PaymentCustomerSearchCommand}" BorderBrush="{x:Null}" Margin="1">
                 <Image Source="..\Resources\Images\lupa activa.png" ></Image>
             </Button>
         </Grid>

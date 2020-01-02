@@ -162,23 +162,23 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Command="{Binding MoveUpListItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=ProductListBox}" Margin="0,0,0,2.5" >
+                    <Button Grid.Column="0" Command="{Binding MoveUpListItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=ProductListBox}" Margin="50,10" >
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\flecha arriba.png" VerticalAlignment="Center" MinWidth="100" Margin="10"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\flecha arriba.png" VerticalAlignment="Center" MinWidth="100" Margin="1"></Image>
                             <TextBlock Grid.Column="1" Text="Subir" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="100"  Foreground="Gray"></TextBlock>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="1" Command="{Binding MoveDownListItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=ProductListBox}" Margin="0,0,0,2.5">
+                    <Button Grid.Column="1" Command="{Binding MoveDownListItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=ProductListBox}" Margin="50,10">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\flecha abajo.png" MinWidth="100" Margin="10"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\flecha abajo.png" MinWidth="100" Margin="1"></Image>
                             <TextBlock Grid.Column="1" Text="Bajar"  VerticalAlignment="Center" MinWidth="100" Foreground="Gray"></TextBlock>
                         </Grid>
                     </Button>
@@ -188,23 +188,23 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Command="{Binding DeleteListItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=ProductListBox}" Margin="0,2.5,0,0">
+                    <Button Grid.Column="0" Command="{Binding DeleteListItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=ProductListBox}" Margin="50,10">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\delete.png" MinWidth="100" Margin="10"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\delete.png" MinWidth="100" Margin="11"></Image>
                             <TextBlock Grid.Column="1" Text="Eliminar" VerticalAlignment="Center" MinWidth="100"  Foreground="Gray"></TextBlock>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="1" Command="{Binding SaveChangesProductListCommand}" CommandParameter="{Binding CurrentSelectedItemsListPageFileName}" Margin="0,2.5,0,0">
+                    <Button Grid.Column="1" Command="{Binding SaveChangesProductListCommand}" CommandParameter="{Binding CurrentSelectedItemsListPageFileName}" Margin="50,10">
                         <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\Guardar.png" MinWidth="100" Margin="10"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\Guardar.png" MinWidth="100" Margin="1"></Image>
                             <TextBlock Grid.Column="1" Text="Guardar" VerticalAlignment="Center" Foreground="Gray" MinWidth="100"></TextBlock>
                         </Grid>
                     </Button>
@@ -278,10 +278,10 @@
                     </Grid.RowDefinitions>
                     <TextBox Grid.Row="0" Name="ListNameTxtBox" Text="{Binding CurrentPageListTitle}" KeyUp="KeyUpNoSymbolsEvent" Height="30" Margin="5"/>
                     <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
+                        <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="3*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
                         <Button Grid.Column="1" Command="{Binding AddListItemCommand}" CommandParameter="{Binding ElementName=AddToListTxtBox}" Margin="10">
                             <Image Source="..\Resources\Images\agregar.png"></Image>
                         </Button>

@@ -10,7 +10,7 @@
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance zeus:MainWindowViewModel}"
         Title="Wibsar Retail" Height="900" Width="1600" FontFamily=".\Resources\Fonts\#Comfortaa"
-        WindowState="Maximized">
+        WindowState="Normal">
 
     <Window.Resources>
         <zeus:StringFormatConverter x:Key="StringFormatConverter"></zeus:StringFormatConverter>
@@ -24,6 +24,7 @@
             <Setter Property="FontSize" Value="16"></Setter>
             <Setter Property="Background" Value="White"></Setter>
             <!--Cambio Color-->
+            <Setter Property="Margin" Value="1"></Setter>
             <Setter Property="Foreground" Value="#2C5066"></Setter>
         </Style>
         <Style TargetType="TextBox">
@@ -153,7 +154,7 @@
                 </Grid>
 
                 <!-- List of products -->
-                <ListBox x:Name ="ProductListBox" Grid.Row="1" ItemsSource="{Binding CurrentCartProducts, Mode=TwoWay}" SelectedItem="{Binding SelectedCartProduct, Mode=TwoWay}" SelectionChanged="ProductListBox_SelectionChanged" Background="#F0F0F0">
+                <ListBox x:Name ="ProductListBox" Grid.Row="1" ItemsSource="{Binding CurrentCartProducts, Mode=TwoWay}" SelectedItem="{Binding SelectedCartProduct, Mode=TwoWay}" SelectionChanged="ProductListBox_SelectionChanged" Background="#F0F0F0" Margin="1">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -182,22 +183,22 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid Column="0">
-                        <Button Content ="-" FontSize="30" Command="{Binding SubtractFromProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem, Mode=TwoWay}" BorderBrush="LightGray"></Button>
+                        <Button Content ="-" FontSize="30" Command="{Binding SubtractFromProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem, Mode=TwoWay}"></Button>
                     </Grid>
                     <Grid Column="1">
                         <Button Content ="+" FontSize="30" Command="{Binding AddToProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem}" ></Button>
                     </Grid>
                     <Grid Column="2">
-                        <Button Content ="%" FontSize="20" Command="{Binding ApplyDiscountToProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem}" BorderBrush="LightGray" ></Button>
+                        <Button Content ="%" FontSize="20" Command="{Binding ApplyDiscountToProductListCommand}" CommandParameter="{Binding ElementName=ProductListBox, Path=SelectedItem}"></Button>
                     </Grid>
                     <Grid Column="3">
                         <Button Content ="C" Command="{Binding ClearCurrentProductListCommand}"></Button>
                     </Grid>
                     <Grid Column="4">
-                        <Button Content ="Inv" Command="{Binding ChangePageCommand}" CommandParameter="inventory" BorderBrush="LightGray"></Button>
+                        <Button Content ="Inv" Command="{Binding ChangePageCommand}" CommandParameter="inventory"></Button>
                     </Grid>
                     <Grid Column="5">
-                        <Button Content ="Ord" Command="{Binding ChangePageCommand}" CommandParameter="queue" BorderBrush="LightGray"></Button>
+                        <Button Content ="Ord" Command="{Binding ChangePageCommand}" CommandParameter="queue"></Button>
                     </Grid>
                 </Grid>
                 <!-- Bottom for price display and payment -->
@@ -223,7 +224,7 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Grid Column="0" Margin="0,0,2,0">
+                <Grid Column="0" Margin="0,0,1,0">
                     <Button Command="{Binding ChangePageCommand}" CommandParameter="general">
                         <Grid>
                             <Grid.RowDefinitions>

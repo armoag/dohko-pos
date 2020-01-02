@@ -20,7 +20,7 @@
             <Setter Property="BorderBrush" Value="{x:Null}"></Setter>
             <Setter Property="FontSize" Value="16"></Setter>
             <Setter Property="Background" Value="White"></Setter>
-            <Setter Property="Margin" Value="10,0"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="Width" Value="200"></Setter>
             <Setter Property="FontFamily" Value="/Dohko;component/Resources/Fonts/#Comfortaa"></Setter>
@@ -91,7 +91,7 @@
                     <KeyBinding Command="{Binding UserStartSearchCommand}" CommandParameter="{Binding UsersSearchText}" Key="Enter"></KeyBinding>
                 </TextBox.InputBindings>
             </TextBox>
-            <Button Grid.Column="2" Command="{Binding UserStartSearchCommand}" CommandParameter="{Binding UsersSearchText}">
+            <Button Grid.Column="2" Command="{Binding UserStartSearchCommand}" CommandParameter="{Binding UsersSearchText}" Margin="1">
                 <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image>
             </Button>
         </Grid>

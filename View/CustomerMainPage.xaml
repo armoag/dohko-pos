@@ -91,7 +91,7 @@
                     <KeyBinding Command="{Binding CustomerStartSearchCommand}" CommandParameter="{Binding CustomersSearchText}" Key="Enter"></KeyBinding>
                 </TextBox.InputBindings>
             </TextBox>
-            <Button Grid.Column="2" Background="White" Command="{Binding CustomerStartSearchCommand}" CommandParameter="{Binding CustomersSearchText}">
+            <Button Grid.Column="2" Background="White" Command="{Binding CustomerStartSearchCommand}" CommandParameter="{Binding CustomersSearchText}" Margin="1">
                 <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image>
             </Button>
         </Grid>

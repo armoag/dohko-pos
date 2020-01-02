@@ -84,23 +84,23 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Command="{Binding MoveUpCategoryItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=CategoryListBox}" Margin="0,0,0,2.5">
+                    <Button Grid.Column="0" Command="{Binding MoveUpCategoryItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=CategoryListBox}" Margin="50,10">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\flecha arriba.png" VerticalAlignment="Center" MinWidth="100" Margin="10"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\flecha arriba.png" VerticalAlignment="Center" MinWidth="100" Margin="1"></Image>
                             <TextBlock Grid.Column="1" Text="Subir" VerticalAlignment="Center" Foreground="Gray" MinWidth="100" FontSize="18"></TextBlock>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="1" Command="{Binding MoveDownCategoryItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=CategoryListBox}" Margin="0,0,0,2.5">
+                    <Button Grid.Column="1" Command="{Binding MoveDownCategoryItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=CategoryListBox}" Margin="50,10">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\flecha abajo.png" MinWidth="100" Margin="10"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\flecha abajo.png" MinWidth="100" Margin="1"></Image>
                             <TextBlock Grid.Column="1" Text="Bajar" MinWidth="100" VerticalAlignment="Center" Foreground="Gray"></TextBlock>
                         </Grid>
                     </Button>
@@ -111,23 +111,23 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Command="{Binding DeleteCategoryItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=CategoryListBox}" Margin="0,2.5,0,0">
+                    <Button Grid.Column="0" Command="{Binding DeleteCategoryItemCommand}" CommandParameter="{Binding SelectedIndex, ElementName=CategoryListBox}" Margin="50,10">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\delete.png" MinWidth="100" Margin="10"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\delete.png" MinWidth="100" Margin="1"></Image>
                             <TextBlock Grid.Column="1" Text="Eliminar" VerticalAlignment="Center" MinWidth="100" Foreground="Gray"></TextBlock>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="1" Command="{Binding SaveChangesCategoryListCommand}" Margin="0,2.5,0,0">
+                    <Button Grid.Column="1" Command="{Binding SaveChangesCategoryListCommand}" Margin="50,10">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="..\Resources\Images\Guardar.png" MinWidth="100" Margin="10"></Image>
+                            <Image Grid.Column="0" Source="..\Resources\Images\Guardar.png" MinWidth="100" Margin="1"></Image>
                             <TextBlock Grid.Column="1" Text="Guardar" VerticalAlignment="Center" MinWidth="100" Foreground="Gray"></TextBlock>
                         </Grid>
                     </Button>
@@ -135,16 +135,16 @@
             </Grid>
 
             <Grid Grid.Row="0" Grid.Column="1" Margin="10,0,5,0">
-                
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height=".5*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" FontSize="24" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="Agregar Categoría"></TextBlock>
+                <TextBlock Grid.Row="0" FontSize="24" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Agregar Categoría"></TextBlock>
                 <!-- New Category Text -->
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -154,12 +154,20 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" FontSize="24" Foreground="Gray" HorizontalAlignment="Left" Text="Nombre" Margin="5,0" VerticalAlignment="Bottom"></TextBlock>
-                    <TextBox Grid.Column="0" Grid.Row="1" Height="40" Margin="5" x:Name="NewCategoryItemTextBox" Text="{Binding NewCategoryItem, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent" VerticalAlignment="Top">
+                    <TextBox Grid.Column="0" Grid.Row="1" Height="40" Margin="5,20,5,0" x:Name="NewCategoryItemTextBox" Text="{Binding NewCategoryItem, UpdateSourceTrigger=PropertyChanged}" KeyUp="KeyUpNoSymbolsEvent" VerticalAlignment="Top" RenderTransformOrigin="0.497,1.392">
                         <TextBox.InputBindings>
                             <KeyBinding Command="{Binding AddCategoryListCommand}" CommandParameter="{Binding NewCategoryItem}" Key="Enter"></KeyBinding>
                         </TextBox.InputBindings>
                     </TextBox>
-                    <Button Grid.Column="1" Margin="5" Grid.Row="1" Height="40" Background="#FFF3F3F3" VerticalAlignment="Top" BorderBrush="LightGray" Command="{Binding AddCategoryListCommand}" CommandParameter="{Binding NewCategoryItem}" Content="Agregar"></Button>
+                    <!--<Button Grid.Column="1" Margin="5" Grid.Row="1" Height="40" Background="#FFF3F3F3" VerticalAlignment="Top" BorderBrush="LightGray" Command="{Binding AddCategoryListCommand}" CommandParameter="{Binding NewCategoryItem}" Content="Agregar"></Button>-->
+                    <Button Grid.Column="1" Grid.Row="1" Command="{Binding AddCategoryListCommand}" CommandParameter="{Binding NewCategoryItem}" VerticalAlignment="Top" Height="69" Margin="5,5,0,0" HorizontalAlignment="Left" Width="82">
+                        <Grid Margin="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="..\Resources\Images\Agregar.png"></Image>
+                        </Grid>
+                    </Button>
                 </Grid>
                 <!-- New Category Text Input -->
                 <Grid Grid.Column="0" Grid.Row="0">

@@ -39,11 +39,11 @@
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="ANALISIS" FontSize="32" VerticalAlignment="Center" Margin="20,0" Foreground="White">
+            <TextBlock Grid.Row="0" Text="ANALISIS" FontSize="24" VerticalAlignment="Center" Margin="20,0">
             </TextBlock>
         </Grid>
         
-        <Grid Grid.Row="1" Background="#F0F0F0">
+        <Grid Grid.Row="1" Background="White">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>

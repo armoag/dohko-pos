@@ -90,7 +90,7 @@
                     <KeyBinding Command="{Binding ExpenseStartSearchCommand}" CommandParameter="{Binding ExpensesSearchText}" Key="Enter"></KeyBinding>
                 </TextBox.InputBindings>
             </TextBox>
-            <Button Grid.Column="2" Command="{Binding ExpenseStartSearchCommand}" CommandParameter="{Binding ExpensesSearchText}">
+            <Button Grid.Column="2" Command="{Binding ExpenseStartSearchCommand}" CommandParameter="{Binding ExpensesSearchText}" Margin="1">
                 <Image Margin="3" Source="..\Resources\Images\lupa activa.png"></Image>
             </Button>
         </Grid>
