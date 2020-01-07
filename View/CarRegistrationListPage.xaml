@@ -114,10 +114,11 @@
         <Grid Row="2" Background="#0C3847">            
             <DataGrid x:Name="CarAccessoriesData" Margin="0,6,0,0" HeadersVisibility="Column" ItemsSource="{Binding CarPartsSearchedEntries}" SelectedItem="{Binding SelectedCarPart, Mode =TwoWay}" CanUserSortColumns="False" CanUserReorderColumns="False" AutoGenerateColumns="False" BorderBrush="{x:Null}" SelectionMode="Single">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="3*" Binding="{Binding Code}" ClipboardContentBinding="{x:Null}" Header=" Código" IsReadOnly="False"/>
+                    <DataGridTextColumn Width="2*" Binding="{Binding Code}" ClipboardContentBinding="{x:Null}" Header=" Código" IsReadOnly="False"/>
                     <DataGridTextColumn Width="2*" Binding="{Binding Model}" ClipboardContentBinding="{x:Null}" Header=" Modelo" IsReadOnly="False"/>
                     <DataGridTextColumn Width="5*" Binding="{Binding Description}" ClipboardContentBinding="{x:Null}" Header=" Descripción" IsReadOnly="False"/>
                     <DataGridTextColumn Width="1.5*" Binding="{Binding Category}" ClipboardContentBinding="{x:Null}" Header=" Categoria" IsReadOnly="False"/>
+                    <DataGridTextColumn Width="1.5*" Binding="{Binding TotalQuantityAvailable}" ClipboardContentBinding="{x:Null}" Header=" Cantidad" IsReadOnly="False"/>
                     <DataGridTextColumn Width="*" Binding="{Binding Price}" ClipboardContentBinding="{x:Null}" Header="Precio" IsReadOnly="False"/>
                     <DataGridTextColumn Width="*" Binding="{Binding PriceCurrency}" ClipboardContentBinding="{x:Null}" Header=" Moneda" IsReadOnly="False"/>
                     <DataGridCheckBoxColumn Width="*" Binding="{Binding Valid}" ClipboardContentBinding="{x:Null}" Header=" Incluír" IsReadOnly="False" ></DataGridCheckBoxColumn>

@@ -112,8 +112,8 @@
         <!-- footer menu -->
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1.5*"/>
-                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -130,6 +130,16 @@
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Exportar" ></TextBlock>
                 </Grid>
             </Button>
+            <Button Grid.Column="1" Command="{Binding InventoryAddNewItemCommand}" CommandParameter="inventory_add">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\Agregar.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Nuevo" ></TextBlock>
+                </Grid>
+            </Button>
             <Button Grid.Column="2" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_add_clone">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
@@ -140,27 +150,17 @@
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" FontSize="18" Text="Clonar"/>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Command="{Binding InventoryAddItemToCartCommand}" CommandParameter="{Binding SelectedInventoryProduct}" HorizontalAlignment="Center">
+            <Button Grid.Column="3" Command="{Binding InventoryOpenImageCommand}" CommandParameter="{Binding SelectedInventoryProduct}" HorizontalAlignment="Center">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="3*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Image Source="..\Resources\Images\add cart.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Al Carrito" ></TextBlock>
+                    <Image Source="..\Resources\Images\Detalles.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Foto" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="4" Command="{Binding InventoryAddNewItemCommand}" CommandParameter="inventory_add">
-                <Grid Margin="5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="3*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="..\Resources\Images\Agregar.png"></Image>
-                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Nuevo" ></TextBlock>
-                </Grid>
-            </Button>
-            <Button Grid.Column="5" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_details">
+            <Button Grid.Column="4" Command="{Binding InventorModifyItemCommand}" CommandParameter="inventory_details">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -168,6 +168,16 @@
                     </Grid.ColumnDefinitions>
                     <Image Source="..\Resources\Images\Detalles.png"></Image>
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Detalles" ></TextBlock>
+                </Grid>
+            </Button>
+            <Button Grid.Column="5" Command="{Binding InventoryAddItemToCartCommand}" CommandParameter="{Binding SelectedInventoryProduct}" HorizontalAlignment="Center">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="..\Resources\Images\add cart.png"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Al Carrito" ></TextBlock>
                 </Grid>
             </Button>
         </Grid>
