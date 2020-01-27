@@ -107,6 +107,7 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Código"></TextBlock>
@@ -136,9 +137,10 @@
                 <TextBlock Grid.Row="24" Text="Modelo"></TextBlock>
                 <TextBlock Grid.Row="25" Text="Año"></TextBlock>
                 <TextBlock Grid.Row="26" Text="Transmision"></TextBlock>
-                <TextBlock Grid.Row="27" Text="Color"></TextBlock>
-                <TextBlock Grid.Row="28" Text="Ubicacion"></TextBlock>
-                <TextBlock Grid.Row="29" Text="Pasillo"></TextBlock>
+                <TextBlock Grid.Row="27" Text="Motor"></TextBlock>
+                <TextBlock Grid.Row="28" Text="Color"></TextBlock>
+                <TextBlock Grid.Row="29" Text="Ubicacion"></TextBlock>
+                <TextBlock Grid.Row="30" Text="Pasillo"></TextBlock>
             </Grid>
             <!-- Inputs for Product properties -->
             <Grid Grid.Column="1">
@@ -165,6 +167,7 @@
                     <RowDefinition Height="1.5*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height=".3*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -202,9 +205,10 @@
                 <TextBox Grid.Row="24" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Model)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <TextBox Grid.Row="25" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Year)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
                 <TextBox Grid.Row="26" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Transmission)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
-                <TextBox Grid.Row="27" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Color)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
-                <TextBox Grid.Row="28" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Location)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
-                <TextBox Grid.Row="29" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.SpecificLocation)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="27" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Motor)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="28" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Color)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="29" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.Location)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
+                <TextBox Grid.Row="30" Margin="2" Text="{Binding InventoryTemporalItem.(zeus:CarPart.SpecificLocation)}" KeyUp="KeyUpNoSymbolsEvent"></TextBox>
             </Grid>
 
             <Grid Grid.Column="2" Grid.Row="0">
@@ -272,7 +276,7 @@
                     <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Grid.Column="1" Background="{x:Null}" FontSize="18" Text="Cancelar" ></TextBlock>
                 </Grid>
             </Button>
-            <Button Grid.Column="3" Command="{Binding InventoryDeleteCommand}">
+            <Button Grid.Column="3" Command="{Binding InventoryDeleteCommand}" CommandParameter="{Binding InventoryTemporalItem}">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
