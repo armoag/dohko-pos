@@ -122,6 +122,7 @@
                     <DataGridTextColumn Width="*" Binding="{Binding Price}" ClipboardContentBinding="{x:Null}" Header="Precio" IsReadOnly="False"/>
                     <DataGridTextColumn Width="*" Binding="{Binding PriceCurrency}" ClipboardContentBinding="{x:Null}" Header=" Moneda" IsReadOnly="False"/>
                     <DataGridCheckBoxColumn Width="*" Binding="{Binding Valid}" ClipboardContentBinding="{x:Null}" Header=" Incluír" IsReadOnly="False" ></DataGridCheckBoxColumn>
+                    <DataGridCheckBoxColumn Width="*" Binding="{Binding ImageCarRegistretionValid, UpdateSourceTrigger=PropertyChanged}" ClipboardContentBinding="{x:Null}" Header=" Imagen" IsReadOnly="False" ></DataGridCheckBoxColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
