@@ -67,5 +67,6 @@ namespace Dohko
         public bool CloudInventory { get; set; } = true;
         public bool IndirectPrice { get; set; } = true;
         public SystemTypeEnum SystemType { get; set; }
+        public DatabaseTypeEnum DbType { get; set; } = DatabaseTypeEnum.MySql;
     }
 }
